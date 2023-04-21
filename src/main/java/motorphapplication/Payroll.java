@@ -4,6 +4,13 @@
  */
 package motorphapplication;
 
+import java.awt.event.KeyEvent;
+import java.awt.print.PrinterException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
@@ -29,710 +36,1000 @@ public class Payroll extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
+        pnlTitle = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jPanel2 = new javax.swing.JPanel();
+        pnlEmpD = new javax.swing.JPanel();
+        lblEmpNo = new javax.swing.JLabel();
+        tfEmpNo = new javax.swing.JTextField();
+        lblLastName = new javax.swing.JLabel();
+        lblFirstName = new javax.swing.JLabel();
+        tfFirstName = new javax.swing.JTextField();
+        tfLastName = new javax.swing.JTextField();
+        lblEmpD = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
+        lblBasicSal = new javax.swing.JLabel();
+        tfBasicSal = new javax.swing.JTextField();
+        lblHourlyRate = new javax.swing.JLabel();
+        tfHourlyRate = new javax.swing.JTextField();
+        lblPayCov = new javax.swing.JLabel();
+        lblPayStrt = new javax.swing.JLabel();
+        datePayStrt = new com.toedter.calendar.JDateChooser();
+        lblPayEnd = new javax.swing.JLabel();
+        datePayEnd = new com.toedter.calendar.JDateChooser();
+        tfHourWorked = new javax.swing.JTextField();
+        btnCalcHoursWorked = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        btnReset = new javax.swing.JButton();
+        pnlIncome = new javax.swing.JPanel();
+        lblIncome = new javax.swing.JLabel();
+        jSeparator2 = new javax.swing.JSeparator();
+        lblInc = new javax.swing.JLabel();
+        lblIncRate = new javax.swing.JLabel();
+        lblHours = new javax.swing.JLabel();
+        lblIncAmount = new javax.swing.JLabel();
+        lblSalary = new javax.swing.JLabel();
+        lblRateSal = new javax.swing.JLabel();
+        tfAmtSalary = new javax.swing.JTextField();
+        lblRegOT = new javax.swing.JLabel();
+        lblRateRegOT = new javax.swing.JLabel();
+        tfAmtRegOT = new javax.swing.JTextField();
+        lblSunOT = new javax.swing.JLabel();
+        lblRateSunOT = new javax.swing.JLabel();
+        tfAmtSunOT = new javax.swing.JTextField();
+        lblAllowance = new javax.swing.JLabel();
+        tfAmtAllowance = new javax.swing.JTextField();
+        lblIncentives = new javax.swing.JLabel();
+        tfAmtIncentives = new javax.swing.JTextField();
+        lblOthers = new javax.swing.JLabel();
+        tfAmtOthers = new javax.swing.JTextField();
+        tfHoursWorked = new javax.swing.JTextField();
+        tfHoursRegOT = new javax.swing.JTextField();
+        tfHoursSunOT = new javax.swing.JTextField();
+        tfGrossIncome = new javax.swing.JTextField();
+        lblGross = new javax.swing.JLabel();
+        btnCalcGrossPay = new javax.swing.JButton();
+        pnlDeductions = new javax.swing.JPanel();
+        lblDeductions = new javax.swing.JLabel();
+        jSeparator3 = new javax.swing.JSeparator();
+        lblDed = new javax.swing.JLabel();
+        lblSSS = new javax.swing.JLabel();
+        lblPhilhealth = new javax.swing.JLabel();
+        lblPagibig = new javax.swing.JLabel();
+        lblDedStatus = new javax.swing.JLabel();
+        lblDedAmt = new javax.swing.JLabel();
+        cbApplSSS = new javax.swing.JCheckBox();
+        cbApplPhealth = new javax.swing.JCheckBox();
+        cbApplPagibig = new javax.swing.JCheckBox();
+        lblTardy = new javax.swing.JLabel();
+        tfAmtAbsent = new javax.swing.JTextField();
+        lblUndertime = new javax.swing.JLabel();
+        tfAmtTardy = new javax.swing.JTextField();
+        lblCA = new javax.swing.JLabel();
+        tfAmtUT = new javax.swing.JTextField();
+        lblDedOthers = new javax.swing.JLabel();
+        tfAmtCA = new javax.swing.JTextField();
+        lblAbsences = new javax.swing.JLabel();
+        tfDedOthers = new javax.swing.JTextField();
+        jSeparator6 = new javax.swing.JSeparator();
+        tfDaysAbsent = new javax.swing.JTextField();
+        tfMinTardy = new javax.swing.JTextField();
+        tfMinUT = new javax.swing.JTextField();
+        tfRAmtSSS = new javax.swing.JTextField();
+        tfRAmtPhealth = new javax.swing.JTextField();
+        tfRAmtPagibig = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
-        jSeparator1 = new javax.swing.JSeparator();
-        jLabel12 = new javax.swing.JLabel();
-        jTextField10 = new javax.swing.JTextField();
-        jLabel13 = new javax.swing.JLabel();
-        jTextField11 = new javax.swing.JTextField();
-        jLabel6 = new javax.swing.JLabel();
-        jDateChooser1 = new com.toedter.calendar.JDateChooser();
-        jLabel7 = new javax.swing.JLabel();
-        jDateChooser2 = new com.toedter.calendar.JDateChooser();
-        jLabel8 = new javax.swing.JLabel();
-        jDateChooser3 = new com.toedter.calendar.JDateChooser();
-        jPanel3 = new javax.swing.JPanel();
-        jLabel9 = new javax.swing.JLabel();
-        jSeparator2 = new javax.swing.JSeparator();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
-        jLabel15 = new javax.swing.JLabel();
-        jLabel16 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jLabel17 = new javax.swing.JLabel();
-        jTextField5 = new javax.swing.JTextField();
-        jLabel18 = new javax.swing.JLabel();
-        jTextField6 = new javax.swing.JTextField();
-        jLabel19 = new javax.swing.JLabel();
-        jTextField7 = new javax.swing.JTextField();
-        jLabel20 = new javax.swing.JLabel();
-        jTextField8 = new javax.swing.JTextField();
-        jLabel21 = new javax.swing.JLabel();
-        jTextField9 = new javax.swing.JTextField();
-        jLabel22 = new javax.swing.JLabel();
-        jTextField12 = new javax.swing.JTextField();
-        jLabel23 = new javax.swing.JLabel();
-        jTextField13 = new javax.swing.JTextField();
-        jLabel24 = new javax.swing.JLabel();
-        jTextField14 = new javax.swing.JTextField();
-        jPanel4 = new javax.swing.JPanel();
-        jLabel25 = new javax.swing.JLabel();
-        jSeparator3 = new javax.swing.JSeparator();
-        jLabel26 = new javax.swing.JLabel();
-        jLabel27 = new javax.swing.JLabel();
-        jLabel28 = new javax.swing.JLabel();
-        jLabel29 = new javax.swing.JLabel();
-        jLabel30 = new javax.swing.JLabel();
-        jTextField15 = new javax.swing.JTextField();
-        jTextField16 = new javax.swing.JTextField();
-        jTextField17 = new javax.swing.JTextField();
-        jLabel31 = new javax.swing.JLabel();
-        jLabel32 = new javax.swing.JLabel();
-        jTextField18 = new javax.swing.JTextField();
-        jTextField19 = new javax.swing.JTextField();
-        jTextField20 = new javax.swing.JTextField();
-        jCheckBox2 = new javax.swing.JCheckBox();
-        jCheckBox3 = new javax.swing.JCheckBox();
-        jCheckBox4 = new javax.swing.JCheckBox();
-        jLabel33 = new javax.swing.JLabel();
-        jTextField21 = new javax.swing.JTextField();
-        jLabel34 = new javax.swing.JLabel();
-        jTextField22 = new javax.swing.JTextField();
-        jLabel35 = new javax.swing.JLabel();
-        jTextField24 = new javax.swing.JTextField();
-        jLabel36 = new javax.swing.JLabel();
-        jTextField25 = new javax.swing.JTextField();
+        lblTotalDed = new javax.swing.JLabel();
+        tfTotalDed = new javax.swing.JTextField();
+        btnCalcDeduction = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
-        jLabel37 = new javax.swing.JLabel();
+        lblSummary = new javax.swing.JLabel();
         jSeparator4 = new javax.swing.JSeparator();
-        jLabel46 = new javax.swing.JLabel();
-        jTextField30 = new javax.swing.JTextField();
-        jLabel47 = new javax.swing.JLabel();
-        jTextField31 = new javax.swing.JTextField();
-        jLabel48 = new javax.swing.JLabel();
-        jTextField32 = new javax.swing.JTextField();
-        jLabel49 = new javax.swing.JLabel();
-        jTextField33 = new javax.swing.JTextField();
-        jButton3 = new javax.swing.JButton();
-        jPanel6 = new javax.swing.JPanel();
-        jLabel40 = new javax.swing.JLabel();
+        tfNetIncome = new javax.swing.JTextField();
+        pnlTax = new javax.swing.JPanel();
+        lblTax = new javax.swing.JLabel();
         jSeparator5 = new javax.swing.JSeparator();
-        jLabel41 = new javax.swing.JLabel();
-        jLabel42 = new javax.swing.JLabel();
-        jLabel43 = new javax.swing.JLabel();
-        jLabel44 = new javax.swing.JLabel();
-        jLabel45 = new javax.swing.JLabel();
-        jTextField27 = new javax.swing.JTextField();
-        jTextField28 = new javax.swing.JTextField();
-        jTextField29 = new javax.swing.JTextField();
-        jCheckBox5 = new javax.swing.JCheckBox();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        lblTaxInc = new javax.swing.JLabel();
+        tfTaxAmt = new javax.swing.JTextField();
+        cbApplTax = new javax.swing.JCheckBox();
+        btnCalcG = new javax.swing.JButton();
+        btnClose = new javax.swing.JButton();
+        btnPrint = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
 
-        jPanel1.setBackground(new java.awt.Color(0, 0, 0));
-        jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        pnlTitle.setBackground(new java.awt.Color(0, 0, 0));
+        pnlTitle.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         jLabel1.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("PAYROLL MANAGEMENT");
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        javax.swing.GroupLayout pnlTitleLayout = new javax.swing.GroupLayout(pnlTitle);
+        pnlTitle.setLayout(pnlTitleLayout);
+        pnlTitleLayout.setHorizontalGroup(
+            pnlTitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlTitleLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        pnlTitleLayout.setVerticalGroup(
+            pnlTitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlTitleLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
+        pnlEmpD.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
 
-        jLabel2.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
-        jLabel2.setText("Employee #");
+        lblEmpNo.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        lblEmpNo.setText("Employee #");
 
-        jTextField2.setEditable(false);
+        tfEmpNo.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                tfEmpNoFocusLost(evt);
+            }
+        });
+        tfEmpNo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfEmpNoActionPerformed(evt);
+            }
+        });
+        tfEmpNo.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                tfEmpNoKeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                tfEmpNoKeyTyped(evt);
+            }
+        });
 
-        jButton1.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
-        jButton1.setText("<<");
+        lblLastName.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        lblLastName.setText("Last Name");
 
-        jLabel4.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
-        jLabel4.setText("Last Name");
+        lblFirstName.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        lblFirstName.setText("First Name");
 
-        jLabel5.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
-        jLabel5.setText("First Name");
+        lblEmpD.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        lblEmpD.setText("Employee Details");
 
-        jLabel3.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
-        jLabel3.setText("Employee Details");
+        lblBasicSal.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        lblBasicSal.setText("Basic Salary");
 
-        jLabel12.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
-        jLabel12.setText("Basic Salary");
+        tfBasicSal.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                tfBasicSalKeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                tfBasicSalKeyTyped(evt);
+            }
+        });
 
-        jLabel13.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
-        jLabel13.setText("Hourly Rate");
+        lblHourlyRate.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        lblHourlyRate.setText("Hourly Rate");
 
-        jLabel6.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
-        jLabel6.setText("Pay Start");
+        tfHourlyRate.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                tfHourlyRateKeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                tfHourlyRateKeyTyped(evt);
+            }
+        });
 
-        jLabel7.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
-        jLabel7.setText("Pay Date");
+        lblPayCov.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        lblPayCov.setText("Pay Coverage");
 
-        jLabel8.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
-        jLabel8.setText("Pay End");
+        lblPayStrt.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        lblPayStrt.setText("Pay Start");
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
+        datePayStrt.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                datePayStrtKeyPressed(evt);
+            }
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                datePayStrtKeyReleased(evt);
+            }
+        });
+
+        lblPayEnd.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        lblPayEnd.setText("Pay End");
+
+        datePayEnd.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                datePayEndKeyTyped(evt);
+            }
+        });
+
+        tfHourWorked.setEditable(false);
+        tfHourWorked.setEnabled(false);
+        tfHourWorked.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                tfHourWorkedKeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                tfHourWorkedKeyTyped(evt);
+            }
+        });
+
+        btnCalcHoursWorked.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        btnCalcHoursWorked.setText("Proceed");
+        btnCalcHoursWorked.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCalcHoursWorkedActionPerformed(evt);
+            }
+        });
+
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 51, 51));
+        jLabel2.setText("Pay Frequency: Weekly (Monday-Friday)");
+
+        btnReset.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        btnReset.setText("Reset");
+        btnReset.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnResetActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout pnlEmpDLayout = new javax.swing.GroupLayout(pnlEmpD);
+        pnlEmpD.setLayout(pnlEmpDLayout);
+        pnlEmpDLayout.setHorizontalGroup(
+            pnlEmpDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlEmpDLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
-                                    .addComponent(jLabel5)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
-                                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(30, 30, 30)
-                                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGroup(pnlEmpDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlEmpDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(pnlEmpDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, pnlEmpDLayout.createSequentialGroup()
+                                .addComponent(lblFirstName)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(tfFirstName, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, pnlEmpDLayout.createSequentialGroup()
+                                .addComponent(lblLastName, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(30, 30, 30)
+                                .addComponent(tfLastName, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(lblEmpNo, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(tfEmpNo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lblEmpD, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(pnlEmpDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlEmpDLayout.createSequentialGroup()
+                        .addGap(276, 276, 276)
+                        .addComponent(lblPayCov)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel6))
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(pnlEmpDLayout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jTextField11, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(47, 47, 47)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel7)
-                            .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(pnlEmpDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(lblBasicSal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(lblHourlyRate, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(pnlEmpDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(tfBasicSal, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(tfHourlyRate, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(pnlEmpDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(lblPayStrt)
+                            .addComponent(lblPayEnd, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jDateChooser2, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jDateChooser3, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGroup(pnlEmpDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(datePayStrt, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(pnlEmpDLayout.createSequentialGroup()
+                                .addGroup(pnlEmpDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(datePayEnd, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(pnlEmpDLayout.createSequentialGroup()
+                                        .addComponent(btnCalcHoursWorked)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(btnReset)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(tfHourWorked, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))))))
             .addComponent(jSeparator1)
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+        pnlEmpDLayout.setVerticalGroup(
+            pnlEmpDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlEmpDLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel2)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(pnlEmpDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblEmpD, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblPayCov)
+                    .addComponent(jLabel2))
+                .addGap(3, 3, 3)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(pnlEmpDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlEmpDLayout.createSequentialGroup()
+                        .addGroup(pnlEmpDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblEmpNo)
+                            .addComponent(tfEmpNo, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(10, 10, 10)
-                                .addComponent(jLabel4)))
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(pnlEmpDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(tfLastName, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblLastName))
+                        .addGroup(pnlEmpDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(pnlEmpDLayout.createSequentialGroup()
                                 .addGap(11, 11, 11)
-                                .addComponent(jLabel5))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(lblFirstName))
+                            .addGroup(pnlEmpDLayout.createSequentialGroup()
                                 .addGap(8, 8, 8)
-                                .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(83, 83, 83))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jDateChooser2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addComponent(jLabel12)
-                                        .addGap(21, 21, 21)
-                                        .addComponent(jLabel13)))
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addGap(18, 18, 18)
-                                        .addComponent(jLabel6))
-                                    .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jDateChooser3, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(tfFirstName, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(pnlEmpDLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(pnlEmpDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblPayStrt)
+                            .addGroup(pnlEmpDLayout.createSequentialGroup()
+                                .addGap(48, 48, 48)
+                                .addComponent(lblPayEnd))
+                            .addGroup(pnlEmpDLayout.createSequentialGroup()
+                                .addComponent(datePayStrt, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(pnlEmpDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(datePayEnd, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(tfHourWorked, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(pnlEmpDLayout.createSequentialGroup()
+                                .addGroup(pnlEmpDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(tfBasicSal, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(lblBasicSal))
                                 .addGap(10, 10, 10)
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addComponent(jTextField11, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(7, 7, 7)
-                                        .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addComponent(jLabel7)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(jLabel8)))))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                                .addGroup(pnlEmpDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(tfHourlyRate, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(lblHourlyRate))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(pnlEmpDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btnCalcHoursWorked, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnReset, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(16, Short.MAX_VALUE))
         );
 
-        jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
+        pnlIncome.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
 
-        jLabel9.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
-        jLabel9.setText("Income");
+        lblIncome.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        lblIncome.setText("Income");
 
-        jLabel10.setFont(new java.awt.Font("SansSerif", 3, 14)); // NOI18N
-        jLabel10.setText("Income");
+        lblInc.setFont(new java.awt.Font("SansSerif", 3, 14)); // NOI18N
+        lblInc.setText("Income");
 
-        jLabel11.setFont(new java.awt.Font("SansSerif", 3, 14)); // NOI18N
-        jLabel11.setText("Rate (₱)");
+        lblIncRate.setFont(new java.awt.Font("SansSerif", 3, 14)); // NOI18N
+        lblIncRate.setText("Rate (₱)");
 
-        jLabel14.setFont(new java.awt.Font("SansSerif", 3, 14)); // NOI18N
-        jLabel14.setText("Hours");
+        lblHours.setFont(new java.awt.Font("SansSerif", 3, 14)); // NOI18N
+        lblHours.setText("Hours");
 
-        jLabel15.setFont(new java.awt.Font("SansSerif", 3, 14)); // NOI18N
-        jLabel15.setText("Amount (₱)");
+        lblIncAmount.setFont(new java.awt.Font("SansSerif", 3, 14)); // NOI18N
+        lblIncAmount.setText("Amount (₱)");
 
-        jLabel16.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
-        jLabel16.setText("Salary");
+        lblSalary.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        lblSalary.setText("Salary");
 
-        jTextField1.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
+        lblRateSal.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        lblRateSal.setText("...");
 
-        jLabel17.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
-        jLabel17.setText("...");
+        tfAmtSalary.setEditable(false);
+        tfAmtSalary.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
+        tfAmtSalary.setText("0");
 
-        jTextField5.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
+        lblRegOT.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        lblRegOT.setText("Reg. OT");
 
-        jLabel18.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
-        jLabel18.setText("Reg. OT");
+        lblRateRegOT.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        lblRateRegOT.setText("...");
 
-        jTextField6.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
+        tfAmtRegOT.setEditable(false);
+        tfAmtRegOT.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
+        tfAmtRegOT.setText("0");
 
-        jLabel19.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
-        jLabel19.setText("...");
+        lblSunOT.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        lblSunOT.setText("Sun. OT");
 
-        jTextField7.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
+        lblRateSunOT.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        lblRateSunOT.setText("...");
 
-        jLabel20.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
-        jLabel20.setText("Sun. OT");
+        tfAmtSunOT.setEditable(false);
+        tfAmtSunOT.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
+        tfAmtSunOT.setText("0");
 
-        jTextField8.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
+        lblAllowance.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        lblAllowance.setText("Allowance");
 
-        jLabel21.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
-        jLabel21.setText("...");
+        tfAmtAllowance.setEditable(false);
+        tfAmtAllowance.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
+        tfAmtAllowance.setText("0");
+        tfAmtAllowance.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                tfAmtAllowanceKeyTyped(evt);
+            }
+        });
 
-        jTextField9.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
+        lblIncentives.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        lblIncentives.setText("Incentives");
 
-        jLabel22.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
-        jLabel22.setText("Allowance");
+        tfAmtIncentives.setEditable(false);
+        tfAmtIncentives.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
+        tfAmtIncentives.setText("0");
+        tfAmtIncentives.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                tfAmtIncentivesKeyTyped(evt);
+            }
+        });
 
-        jTextField12.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
+        lblOthers.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        lblOthers.setText("Others");
 
-        jLabel23.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
-        jLabel23.setText("Incentives");
+        tfAmtOthers.setEditable(false);
+        tfAmtOthers.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
+        tfAmtOthers.setText("0");
+        tfAmtOthers.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                tfAmtOthersKeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                tfAmtOthersKeyTyped(evt);
+            }
+        });
 
-        jTextField13.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
+        tfHoursWorked.setEditable(false);
+        tfHoursWorked.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
+        tfHoursWorked.addCaretListener(new javax.swing.event.CaretListener() {
+            public void caretUpdate(javax.swing.event.CaretEvent evt) {
+                tfHoursWorkedCaretUpdate(evt);
+            }
+        });
+        tfHoursWorked.addInputMethodListener(new java.awt.event.InputMethodListener() {
+            public void caretPositionChanged(java.awt.event.InputMethodEvent evt) {
+            }
+            public void inputMethodTextChanged(java.awt.event.InputMethodEvent evt) {
+                tfHoursWorkedInputMethodTextChanged(evt);
+            }
+        });
+        tfHoursWorked.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfHoursWorkedActionPerformed(evt);
+            }
+        });
 
-        jLabel24.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
-        jLabel24.setText("Others");
+        tfHoursRegOT.setEditable(false);
+        tfHoursRegOT.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
+        tfHoursRegOT.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                tfHoursRegOTKeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                tfHoursRegOTKeyTyped(evt);
+            }
+        });
 
-        jTextField14.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
+        tfHoursSunOT.setEditable(false);
+        tfHoursSunOT.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
+        tfHoursSunOT.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                tfHoursSunOTKeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                tfHoursSunOTKeyTyped(evt);
+            }
+        });
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        tfGrossIncome.setEditable(false);
+        tfGrossIncome.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        tfGrossIncome.setText("0");
+
+        lblGross.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        lblGross.setText("Gross Income:");
+
+        btnCalcGrossPay.setFont(new java.awt.Font("SansSerif", 0, 10)); // NOI18N
+        btnCalcGrossPay.setText("<<");
+        btnCalcGrossPay.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCalcGrossPayActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout pnlIncomeLayout = new javax.swing.GroupLayout(pnlIncome);
+        pnlIncome.setLayout(pnlIncomeLayout);
+        pnlIncomeLayout.setHorizontalGroup(
+            pnlIncomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jSeparator2, javax.swing.GroupLayout.Alignment.TRAILING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
+            .addGroup(pnlIncomeLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(243, 243, 243)
-                        .addComponent(jLabel21)
-                        .addGap(92, 92, 92)
-                        .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(jLabel20)
-                        .addGap(44, 44, 44)
-                        .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(347, 347, 347)
-                        .addComponent(jTextField12, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jLabel22)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(347, 347, 347)
-                        .addComponent(jTextField13, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jLabel23)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(347, 347, 347)
-                        .addComponent(jTextField14, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jLabel24)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(pnlIncomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblIncome, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblAllowance)
+                    .addComponent(lblIncentives)
+                    .addComponent(lblOthers)
+                    .addGroup(pnlIncomeLayout.createSequentialGroup()
+                        .addGroup(pnlIncomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(pnlIncomeLayout.createSequentialGroup()
+                                .addComponent(lblInc, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel16)
-                                    .addComponent(jLabel18))
-                                .addGap(44, 44, 44)
-                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addGap(51, 51, 51)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(lblIncRate, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(pnlIncomeLayout.createSequentialGroup()
+                                .addGroup(pnlIncomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(lblSunOT)
+                                    .addComponent(lblSalary)
+                                    .addComponent(lblRegOT))
+                                .addGap(58, 58, 58)
+                                .addGroup(pnlIncomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(lblRateSunOT)
+                                    .addGroup(pnlIncomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(lblRateRegOT)
+                                        .addComponent(lblRateSal)))))
+                        .addGroup(pnlIncomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(pnlIncomeLayout.createSequentialGroup()
+                                .addGap(51, 51, 51)
+                                .addComponent(lblHours, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addGroup(jPanel3Layout.createSequentialGroup()
-                                    .addComponent(jLabel19)
-                                    .addGap(92, 92, 92)
-                                    .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(jPanel3Layout.createSequentialGroup()
-                                    .addComponent(jLabel17)
-                                    .addGap(92, 92, 92)
-                                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                                .addComponent(lblIncAmount, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(pnlIncomeLayout.createSequentialGroup()
+                                .addGap(40, 40, 40)
+                                .addGroup(pnlIncomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(pnlIncomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(tfHoursRegOT, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(tfHoursWorked, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(tfHoursSunOT, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(35, 35, 35)
+                                .addGroup(pnlIncomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(pnlIncomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(tfAmtRegOT, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(tfAmtSalary, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(tfAmtSunOT, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(tfAmtAllowance, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(tfAmtIncentives, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(tfAmtOthers, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                    .addGroup(pnlIncomeLayout.createSequentialGroup()
+                        .addComponent(lblGross)
+                        .addGap(32, 32, 32)
+                        .addComponent(tfGrossIncome, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnCalcGrossPay, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(9, Short.MAX_VALUE))
         );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
+        pnlIncomeLayout.setVerticalGroup(
+            pnlIncomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlIncomeLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lblIncome, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel10)
-                    .addComponent(jLabel11)
-                    .addComponent(jLabel14)
-                    .addComponent(jLabel15))
+                .addGroup(pnlIncomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblInc)
+                    .addComponent(lblIncRate)
+                    .addComponent(lblHours)
+                    .addComponent(lblIncAmount))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel16)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel17)
-                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(pnlIncomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlIncomeLayout.createSequentialGroup()
+                        .addGroup(pnlIncomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblSalary)
+                            .addComponent(tfAmtSalary, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(pnlIncomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblRegOT)
+                            .addComponent(tfAmtRegOT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(pnlIncomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblSunOT)
+                            .addComponent(tfAmtSunOT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(pnlIncomeLayout.createSequentialGroup()
+                        .addComponent(lblRateSal)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(lblRateRegOT)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(lblRateSunOT))
+                    .addGroup(pnlIncomeLayout.createSequentialGroup()
+                        .addComponent(tfHoursWorked, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(tfHoursRegOT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(tfHoursSunOT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel18)
-                    .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel19)
-                    .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(pnlIncomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblAllowance)
+                    .addComponent(tfAmtAllowance, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel20)
-                    .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel21)
-                    .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(pnlIncomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblIncentives)
+                    .addComponent(tfAmtIncentives, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel22)
-                    .addComponent(jTextField12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(pnlIncomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblOthers)
+                    .addComponent(tfAmtOthers, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel23)
-                    .addComponent(jTextField13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel24)
-                    .addComponent(jTextField14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(158, 158, 158))
+                .addGroup(pnlIncomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblGross)
+                    .addComponent(tfGrossIncome, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnCalcGrossPay, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(117, 117, 117))
         );
 
-        jPanel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
+        pnlDeductions.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
 
-        jLabel25.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
-        jLabel25.setText("Deductions");
+        lblDeductions.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        lblDeductions.setText("Deductions");
 
-        jLabel26.setFont(new java.awt.Font("SansSerif", 3, 14)); // NOI18N
-        jLabel26.setText("Deduction");
+        lblDed.setFont(new java.awt.Font("SansSerif", 3, 14)); // NOI18N
+        lblDed.setText("Deduction");
 
-        jLabel27.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
-        jLabel27.setText("SSS");
+        lblSSS.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        lblSSS.setText("SSS");
 
-        jLabel28.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
-        jLabel28.setText("Philhealth");
+        lblPhilhealth.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        lblPhilhealth.setText("Philhealth");
 
-        jLabel29.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
-        jLabel29.setText("Pag-ibig");
+        lblPagibig.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        lblPagibig.setText("Pag-ibig");
 
-        jLabel30.setFont(new java.awt.Font("SansSerif", 3, 14)); // NOI18N
-        jLabel30.setText("Status");
+        lblDedStatus.setFont(new java.awt.Font("SansSerif", 3, 14)); // NOI18N
+        lblDedStatus.setText("Status");
 
-        jTextField15.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
+        lblDedAmt.setFont(new java.awt.Font("SansSerif", 3, 14)); // NOI18N
+        lblDedAmt.setText("Amount (₱)");
 
-        jTextField16.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
-
-        jTextField17.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
-
-        jLabel31.setFont(new java.awt.Font("SansSerif", 3, 14)); // NOI18N
-        jLabel31.setText("Rate (₱)");
-
-        jLabel32.setFont(new java.awt.Font("SansSerif", 3, 14)); // NOI18N
-        jLabel32.setText("Amount (₱)");
-
-        jTextField18.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
-
-        jTextField19.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
-
-        jTextField20.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
-
-        jCheckBox2.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
-        jCheckBox2.setText("Apply?");
-        jCheckBox2.addActionListener(new java.awt.event.ActionListener() {
+        cbApplSSS.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        cbApplSSS.setText("Apply?");
+        cbApplSSS.setEnabled(false);
+        cbApplSSS.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox2ActionPerformed(evt);
+                cbApplSSSActionPerformed(evt);
             }
         });
-        jCheckBox2.addKeyListener(new java.awt.event.KeyAdapter() {
+        cbApplSSS.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
-                jCheckBox2KeyPressed(evt);
+                cbApplSSSKeyPressed(evt);
             }
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                jCheckBox2KeyReleased(evt);
+                cbApplSSSKeyReleased(evt);
             }
         });
 
-        jCheckBox3.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
-        jCheckBox3.setText("Apply?");
-        jCheckBox3.addActionListener(new java.awt.event.ActionListener() {
+        cbApplPhealth.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        cbApplPhealth.setText("Apply?");
+        cbApplPhealth.setEnabled(false);
+        cbApplPhealth.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox3ActionPerformed(evt);
+                cbApplPhealthActionPerformed(evt);
             }
         });
-        jCheckBox3.addKeyListener(new java.awt.event.KeyAdapter() {
+        cbApplPhealth.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
-                jCheckBox3KeyPressed(evt);
+                cbApplPhealthKeyPressed(evt);
             }
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                jCheckBox3KeyReleased(evt);
+                cbApplPhealthKeyReleased(evt);
             }
         });
 
-        jCheckBox4.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
-        jCheckBox4.setText("Apply?");
-        jCheckBox4.addActionListener(new java.awt.event.ActionListener() {
+        cbApplPagibig.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        cbApplPagibig.setText("Apply?");
+        cbApplPagibig.setEnabled(false);
+        cbApplPagibig.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox4ActionPerformed(evt);
+                cbApplPagibigActionPerformed(evt);
             }
         });
-        jCheckBox4.addKeyListener(new java.awt.event.KeyAdapter() {
+        cbApplPagibig.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
-                jCheckBox4KeyPressed(evt);
+                cbApplPagibigKeyPressed(evt);
             }
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                jCheckBox4KeyReleased(evt);
+                cbApplPagibigKeyReleased(evt);
             }
         });
 
-        jLabel33.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
-        jLabel33.setText("Tardiness");
+        lblTardy.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        lblTardy.setText("Tardiness");
 
-        jTextField21.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
+        tfAmtAbsent.setEditable(false);
+        tfAmtAbsent.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
+        tfAmtAbsent.setText("0");
 
-        jLabel34.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
-        jLabel34.setText("Undertime");
+        lblUndertime.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        lblUndertime.setText("Undertime");
 
-        jTextField22.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
+        tfAmtTardy.setEditable(false);
+        tfAmtTardy.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
+        tfAmtTardy.setText("0");
+        tfAmtTardy.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfAmtTardyActionPerformed(evt);
+            }
+        });
 
-        jLabel35.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
-        jLabel35.setText("Cash Advances");
+        lblCA.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        lblCA.setText("Cash Advances");
 
-        jTextField24.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
+        tfAmtUT.setEditable(false);
+        tfAmtUT.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
+        tfAmtUT.setText("0");
 
-        jLabel36.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
-        jLabel36.setText("Others");
+        lblDedOthers.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        lblDedOthers.setText("Others");
 
-        jTextField25.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
+        tfAmtCA.setEditable(false);
+        tfAmtCA.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
+        tfAmtCA.setText("0");
+        tfAmtCA.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                tfAmtCAKeyTyped(evt);
+            }
+        });
 
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        lblAbsences.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        lblAbsences.setText("Absences");
+
+        tfDedOthers.setEditable(false);
+        tfDedOthers.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
+        tfDedOthers.setText("0");
+        tfDedOthers.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                tfDedOthersKeyTyped(evt);
+            }
+        });
+
+        tfDaysAbsent.setEditable(false);
+        tfDaysAbsent.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
+        tfDaysAbsent.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfDaysAbsentActionPerformed(evt);
+            }
+        });
+        tfDaysAbsent.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                tfDaysAbsentKeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                tfDaysAbsentKeyTyped(evt);
+            }
+        });
+
+        tfMinTardy.setEditable(false);
+        tfMinTardy.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
+        tfMinTardy.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfMinTardyActionPerformed(evt);
+            }
+        });
+        tfMinTardy.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                tfMinTardyKeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                tfMinTardyKeyTyped(evt);
+            }
+        });
+
+        tfMinUT.setEditable(false);
+        tfMinUT.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
+        tfMinUT.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                tfMinUTKeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                tfMinUTKeyTyped(evt);
+            }
+        });
+
+        tfRAmtSSS.setEditable(false);
+        tfRAmtSSS.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
+        tfRAmtSSS.setText("0");
+        tfRAmtSSS.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                tfRAmtSSSKeyTyped(evt);
+            }
+        });
+
+        tfRAmtPhealth.setEditable(false);
+        tfRAmtPhealth.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
+        tfRAmtPhealth.setText("0");
+        tfRAmtPhealth.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                tfRAmtPhealthKeyTyped(evt);
+            }
+        });
+
+        tfRAmtPagibig.setEditable(false);
+        tfRAmtPagibig.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
+        tfRAmtPagibig.setText("0");
+        tfRAmtPagibig.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                tfRAmtPagibigKeyTyped(evt);
+            }
+        });
+
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 51, 51));
+        jLabel3.setText("No. of Days");
+
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 51, 51));
+        jLabel4.setText("Minutes");
+
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 51, 51));
+        jLabel5.setText("Hours");
+
+        lblTotalDed.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        lblTotalDed.setText("Total Deductions:");
+
+        tfTotalDed.setEditable(false);
+        tfTotalDed.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        tfTotalDed.setText("0");
+
+        btnCalcDeduction.setFont(new java.awt.Font("SansSerif", 0, 10)); // NOI18N
+        btnCalcDeduction.setText("<<");
+        btnCalcDeduction.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCalcDeductionActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout pnlDeductionsLayout = new javax.swing.GroupLayout(pnlDeductions);
+        pnlDeductions.setLayout(pnlDeductionsLayout);
+        pnlDeductionsLayout.setHorizontalGroup(
+            pnlDeductionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jSeparator3)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGap(15, 15, 15)
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(jPanel4Layout.createSequentialGroup()
-                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel4Layout.createSequentialGroup()
-                                        .addComponent(jLabel26, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jLabel30, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(jPanel4Layout.createSequentialGroup()
-                                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel29)
-                                            .addComponent(jLabel27)
-                                            .addComponent(jLabel28))
-                                        .addGap(38, 38, 38)
-                                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addGroup(jPanel4Layout.createSequentialGroup()
-                                                .addComponent(jCheckBox4)
-                                                .addGap(51, 51, 51)
-                                                .addComponent(jTextField17, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                            .addGroup(jPanel4Layout.createSequentialGroup()
-                                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(jCheckBox2)
-                                                    .addComponent(jCheckBox3))
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(jTextField16, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                    .addComponent(jTextField15, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                    .addComponent(jLabel31))))))
-                                .addGap(21, 21, 21)
-                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextField20, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(jPanel4Layout.createSequentialGroup()
-                                        .addGap(1, 1, 1)
-                                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jTextField19, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jTextField18, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                    .addComponent(jLabel32, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(jPanel4Layout.createSequentialGroup()
-                                        .addComponent(jLabel35)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jTextField24, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(jPanel4Layout.createSequentialGroup()
-                                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel33)
-                                            .addComponent(jLabel34))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jTextField22, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jTextField21, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                    .addGroup(jPanel4Layout.createSequentialGroup()
-                                        .addComponent(jLabel36)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jTextField25, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGap(10, 10, 10))))
-                    .addGroup(jPanel4Layout.createSequentialGroup()
+            .addComponent(jSeparator6, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addGroup(pnlDeductionsLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(pnlDeductionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlDeductionsLayout.createSequentialGroup()
+                        .addGroup(pnlDeductionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(pnlDeductionsLayout.createSequentialGroup()
+                                .addGap(2, 2, 2)
+                                .addComponent(lblAbsences)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel3))
+                            .addGroup(pnlDeductionsLayout.createSequentialGroup()
+                                .addComponent(lblTardy)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel4))
+                            .addGroup(pnlDeductionsLayout.createSequentialGroup()
+                                .addComponent(lblCA)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(pnlDeductionsLayout.createSequentialGroup()
+                                .addComponent(lblUndertime)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel5)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(pnlDeductionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(tfMinUT, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(tfDaysAbsent, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(tfMinTardy, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(31, 31, 31))
+                    .addGroup(pnlDeductionsLayout.createSequentialGroup()
+                        .addComponent(lblDedOthers)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addGroup(pnlDeductionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(tfAmtUT, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tfAmtAbsent, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tfAmtCA, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tfAmtTardy, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tfDedOthers, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(24, 24, 24))
+            .addGroup(pnlDeductionsLayout.createSequentialGroup()
+                .addGroup(pnlDeductionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlDeductionsLayout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jLabel25, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(lblDeductions, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(pnlDeductionsLayout.createSequentialGroup()
+                        .addGap(15, 15, 15)
+                        .addGroup(pnlDeductionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblDed, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(pnlDeductionsLayout.createSequentialGroup()
+                                .addGroup(pnlDeductionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(lblPagibig)
+                                    .addComponent(lblSSS)
+                                    .addComponent(lblPhilhealth))
+                                .addGap(38, 38, 38)
+                                .addGroup(pnlDeductionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(cbApplSSS)
+                                    .addComponent(cbApplPhealth)
+                                    .addGroup(pnlDeductionsLayout.createSequentialGroup()
+                                        .addGap(15, 15, 15)
+                                        .addComponent(lblDedStatus))
+                                    .addComponent(cbApplPagibig))))
+                        .addGap(163, 163, 163)
+                        .addGroup(pnlDeductionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblDedAmt, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(tfRAmtPhealth, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(tfRAmtSSS, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(tfRAmtPagibig, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(pnlDeductionsLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(lblTotalDed)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(tfTotalDed, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnCalcDeduction, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
+        pnlDeductionsLayout.setVerticalGroup(
+            pnlDeductionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlDeductionsLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel25, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lblDeductions, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel26)
-                    .addComponent(jLabel30)
-                    .addComponent(jLabel31)
-                    .addComponent(jLabel32))
+                .addGroup(pnlDeductionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblDed)
+                    .addComponent(lblDedStatus)
+                    .addComponent(lblDedAmt))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel27)
-                            .addComponent(jTextField15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jCheckBox2))
+                .addGroup(pnlDeductionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlDeductionsLayout.createSequentialGroup()
+                        .addGroup(pnlDeductionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblSSS)
+                            .addComponent(cbApplSSS))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel28)
-                            .addComponent(jTextField16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jCheckBox3))
+                        .addGroup(pnlDeductionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblPhilhealth)
+                            .addComponent(cbApplPhealth)
+                            .addComponent(tfRAmtPhealth, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel29)
-                            .addComponent(jTextField17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jCheckBox4)))
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(jTextField18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jTextField19, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jTextField20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextField21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel33))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextField22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel34))
+                        .addGroup(pnlDeductionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblPagibig)
+                            .addComponent(cbApplPagibig)
+                            .addComponent(tfRAmtPagibig, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addComponent(jSeparator6, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(tfRAmtSSS, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextField24, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel35))
-                .addGap(12, 12, 12)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextField25, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel36))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(pnlDeductionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlDeductionsLayout.createSequentialGroup()
+                        .addComponent(lblAbsences)
+                        .addGap(12, 12, 12)
+                        .addComponent(lblTardy)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(lblUndertime)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lblCA)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lblDedOthers))
+                    .addGroup(pnlDeductionsLayout.createSequentialGroup()
+                        .addGroup(pnlDeductionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(pnlDeductionsLayout.createSequentialGroup()
+                                .addComponent(tfAmtAbsent, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(tfAmtTardy, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(tfAmtUT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(tfAmtCA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(pnlDeductionsLayout.createSequentialGroup()
+                                .addGroup(pnlDeductionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(tfDaysAbsent, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel3))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(pnlDeductionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(tfMinTardy, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel4))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(pnlDeductionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(tfMinUT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel5))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(tfDedOthers, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(18, 18, 18)
+                .addGroup(pnlDeductionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblTotalDed)
+                    .addComponent(tfTotalDed, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnCalcDeduction, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(18, Short.MAX_VALUE))
         );
 
         jPanel5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
 
-        jLabel37.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
-        jLabel37.setText("Summary");
+        lblSummary.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        lblSummary.setText("NET INCOME");
 
-        jLabel46.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
-        jLabel46.setText("Gross Income:");
-
-        jTextField30.setEditable(false);
-        jTextField30.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
-        jTextField30.setText("0");
-
-        jLabel47.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
-        jLabel47.setText("Total Deductions:");
-
-        jTextField31.setEditable(false);
-        jTextField31.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
-        jTextField31.setText("0");
-
-        jLabel48.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
-        jLabel48.setText("Withholding Tax:");
-
-        jTextField32.setEditable(false);
-        jTextField32.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
-        jTextField32.setText("0");
-
-        jLabel49.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
-        jLabel49.setText("Net Income:");
-
-        jTextField33.setEditable(false);
-        jTextField33.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
-        jTextField33.setText("0");
-
-        jButton3.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
-        jButton3.setText("Print Payslip");
+        tfNetIncome.setEditable(false);
+        tfNetIncome.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        tfNetIncome.setText("0");
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -740,307 +1037,962 @@ public class Payroll extends javax.swing.JFrame {
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jSeparator4, javax.swing.GroupLayout.Alignment.TRAILING)
             .addGroup(jPanel5Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel5Layout.createSequentialGroup()
-                                .addComponent(jLabel49)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jTextField33, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel5Layout.createSequentialGroup()
-                                .addComponent(jLabel48)
-                                .addGap(18, 18, 18)
-                                .addComponent(jTextField32, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel37, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel5Layout.createSequentialGroup()
-                                    .addComponent(jLabel46)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jTextField30, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel5Layout.createSequentialGroup()
-                                    .addComponent(jLabel47)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(jTextField31, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
+                .addGap(127, 127, 127)
+                .addComponent(lblSummary)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                .addContainerGap(64, Short.MAX_VALUE)
+                .addComponent(tfNetIncome, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(59, 59, 59))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel37, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lblSummary, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel46)
-                    .addComponent(jTextField30, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel47)
-                    .addComponent(jTextField31, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel48)
-                    .addComponent(jTextField32, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel49)
-                    .addComponent(jTextField33, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(24, Short.MAX_VALUE))
+                .addComponent(tfNetIncome, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanel6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
+        pnlTax.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
 
-        jLabel40.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
-        jLabel40.setText("Tax");
+        lblTax.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        lblTax.setText("Tax");
 
-        jLabel41.setFont(new java.awt.Font("SansSerif", 3, 14)); // NOI18N
-        jLabel41.setText("Tax");
+        lblTaxInc.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        lblTaxInc.setText("Withholding Tax");
 
-        jLabel42.setFont(new java.awt.Font("SansSerif", 3, 14)); // NOI18N
-        jLabel42.setText("Amount (₱)");
-
-        jLabel43.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
-        jLabel43.setText("Taxable Income");
-
-        jLabel44.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
-        jLabel44.setText("Tax");
-
-        jLabel45.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
-        jLabel45.setText("Net of Tax");
-
-        jTextField27.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
-
-        jTextField28.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
-
-        jTextField29.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
-
-        jCheckBox5.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
-        jCheckBox5.setText("Apply?");
-        jCheckBox5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox5ActionPerformed(evt);
+        tfTaxAmt.setEditable(false);
+        tfTaxAmt.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
+        tfTaxAmt.setText("0");
+        tfTaxAmt.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                tfTaxAmtKeyTyped(evt);
             }
         });
-        jCheckBox5.addKeyListener(new java.awt.event.KeyAdapter() {
+
+        cbApplTax.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        cbApplTax.setText("Apply?");
+        cbApplTax.setEnabled(false);
+        cbApplTax.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbApplTaxActionPerformed(evt);
+            }
+        });
+        cbApplTax.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
-                jCheckBox5KeyPressed(evt);
+                cbApplTaxKeyPressed(evt);
             }
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                jCheckBox5KeyReleased(evt);
+                cbApplTaxKeyReleased(evt);
             }
         });
 
-        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
-        jPanel6.setLayout(jPanel6Layout);
-        jPanel6Layout.setHorizontalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout pnlTaxLayout = new javax.swing.GroupLayout(pnlTax);
+        pnlTax.setLayout(pnlTaxLayout);
+        pnlTaxLayout.setHorizontalGroup(
+            pnlTaxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jSeparator5, javax.swing.GroupLayout.Alignment.TRAILING)
-            .addGroup(jPanel6Layout.createSequentialGroup()
+            .addGroup(pnlTaxLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel43)
-                            .addComponent(jLabel44)
-                            .addComponent(jLabel45)
-                            .addComponent(jLabel41, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(44, 44, 44)
-                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel6Layout.createSequentialGroup()
-                                .addComponent(jLabel42, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addComponent(jTextField29)
-                            .addComponent(jTextField28)
-                            .addComponent(jTextField27)))
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel40, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jCheckBox5))
-                        .addGap(0, 86, Short.MAX_VALUE)))
-                .addContainerGap())
+                .addGroup(pnlTaxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlTaxLayout.createSequentialGroup()
+                        .addComponent(lblTax, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(pnlTaxLayout.createSequentialGroup()
+                        .addComponent(lblTaxInc)
+                        .addGap(42, 42, 42)
+                        .addComponent(cbApplTax)
+                        .addGap(48, 48, 48)
+                        .addComponent(tfTaxAmt, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
-        jPanel6Layout.setVerticalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel6Layout.createSequentialGroup()
+        pnlTaxLayout.setVerticalGroup(
+            pnlTaxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlTaxLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel40, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lblTax, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jCheckBox5)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel41)
-                    .addComponent(jLabel42))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel43)
-                    .addComponent(jTextField29, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel44)
-                    .addComponent(jTextField28, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel45)
-                    .addComponent(jTextField27, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
+                .addGroup(pnlTaxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cbApplTax)
+                    .addComponent(lblTaxInc)
+                    .addComponent(tfTaxAmt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jButton4.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
-        jButton4.setText("Save");
-
-        jButton5.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
-        jButton5.setText("Update");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        btnCalcG.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        btnCalcG.setText("Calculate");
+        btnCalcG.setEnabled(false);
+        btnCalcG.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                btnCalcGActionPerformed(evt);
             }
         });
 
-        jButton6.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
-        jButton6.setText("Delete");
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
+        btnClose.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        btnClose.setText("Close");
+        btnClose.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
+                btnCloseActionPerformed(evt);
             }
         });
 
-        jButton2.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
-        jButton2.setText("Close");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btnPrint.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        btnPrint.setText("Print Payslip");
+        btnPrint.setEnabled(false);
+        btnPrint.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btnPrintActionPerformed(evt);
             }
         });
+
+        jTextArea1.setEditable(false);
+        jTextArea1.setColumns(20);
+        jTextArea1.setRows(5);
+        jScrollPane1.setViewportView(jTextArea1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(jButton4)
-                                .addGap(8, 8, 8)
-                                .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(5, 5, 5)
-                                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(363, 363, 363)
+                        .addComponent(btnCalcG, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(pnlTitle, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(276, 276, 276)
+                        .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(36, 36, 36)
+                        .addComponent(btnPrint, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 430, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(0, 0, Short.MAX_VALUE))
+                        .addComponent(btnClose, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(pnlIncome, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(pnlTax, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(pnlDeductions, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(pnlEmpD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(30, 30, 30)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 455, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(pnlTitle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(pnlEmpD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(pnlDeductions, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(179, 179, 179)
+                        .addComponent(pnlIncome, javax.swing.GroupLayout.PREFERRED_SIZE, 327, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(pnlTax, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnCalcG, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(btnPrint, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnClose, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
     private JFrame frame;
-    private void jCheckBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox2ActionPerformed
-   
-    }//GEN-LAST:event_jCheckBox2ActionPerformed
+    
+    
+    private void cbApplSSSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbApplSSSActionPerformed
+        if (cbApplSSS.isSelected()) {
+            if (tfEmpNo.getText() == null || tfLastName.getText() == null || tfFirstName.getText() == null || tfBasicSal.getText() == null || tfHourlyRate.getText() == null || datePayStrt.getDate() == null || datePayEnd.getDate() == null) {
+                JOptionPane.showMessageDialog(null, "Please fill in required fields",
+                        "MotorPH Employee Application", JOptionPane.OK_OPTION);
+                cbApplSSS.setSelected(false);
+            } else {
+                tfRAmtSSS.setEditable(true);
+            }
 
-    private void jCheckBox2KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jCheckBox2KeyPressed
+        } else {
+            tfRAmtSSS.setText("0");
+            tfRAmtSSS.setEditable(false);
+        }
+    }//GEN-LAST:event_cbApplSSSActionPerformed
 
-    }//GEN-LAST:event_jCheckBox2KeyPressed
+    private void cbApplSSSKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_cbApplSSSKeyPressed
 
-    private void jCheckBox2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jCheckBox2KeyReleased
+    }//GEN-LAST:event_cbApplSSSKeyPressed
+
+    private void cbApplSSSKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_cbApplSSSKeyReleased
         // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox2KeyReleased
+    }//GEN-LAST:event_cbApplSSSKeyReleased
 
-    private void jCheckBox3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox3ActionPerformed
+    private void cbApplPhealthActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbApplPhealthActionPerformed
+        if (cbApplPhealth.isSelected()) {
+            if (tfEmpNo.getText() == null || tfLastName.getText() == null || tfFirstName.getText() == null || tfBasicSal.getText() == null || tfHourlyRate.getText() == null || datePayStrt.getDate() == null || datePayEnd.getDate() == null) {
+                JOptionPane.showMessageDialog(null, "Please fill in required fields",
+                        "MotorPH Employee Application", JOptionPane.OK_OPTION);
+                cbApplPhealth.setSelected(false);
+            } else {
+                double sal = Double.parseDouble(tfBasicSal.getText());
+                if (sal <=9999) {
+                    tfRAmtPhealth.setText("0");
+                    tfRAmtPhealth.setEditable(true);
+                } else {
+                    double phCont = sal * 0.3 / 2;
+                    tfRAmtPhealth.setText(Double.toString(phCont));
+                    tfRAmtPhealth.setEditable(true);
+                }
+            }
+
+        } else {
+            tfRAmtPhealth.setText("0");
+            tfRAmtPhealth.setEditable(false);
+        }
+    }//GEN-LAST:event_cbApplPhealthActionPerformed
+
+    private void cbApplPhealthKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_cbApplPhealthKeyPressed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox3ActionPerformed
+    }//GEN-LAST:event_cbApplPhealthKeyPressed
 
-    private void jCheckBox3KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jCheckBox3KeyPressed
+    private void cbApplPhealthKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_cbApplPhealthKeyReleased
         // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox3KeyPressed
+    }//GEN-LAST:event_cbApplPhealthKeyReleased
 
-    private void jCheckBox3KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jCheckBox3KeyReleased
+    private void cbApplPagibigActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbApplPagibigActionPerformed
+        if (cbApplPagibig.isSelected()) {
+            if (tfEmpNo.getText()==null || tfLastName.getText()==null || tfFirstName.getText() == null || tfBasicSal.getText()==null || tfHourlyRate.getText()==null || datePayStrt.getDate()== null || datePayEnd.getDate()== null) {
+            JOptionPane.showMessageDialog(null, "Please fill in required fields",
+                    "MotorPH Employee Application", JOptionPane.OK_OPTION);
+            cbApplPagibig.setSelected(false);
+            
+            } else {
+                double sal = Double.parseDouble(tfBasicSal.getText());
+                if (sal<=999){
+                    tfRAmtPagibig.setText("0");
+                    tfRAmtPagibig.setEditable(true);
+                    
+                } else if(sal<=1000 && sal>=1500){
+                    double pagCont = sal*0.01;
+                    tfRAmtPagibig.setText(Double.toString(pagCont));
+                    tfRAmtPagibig.setEditable(true);
+                } else {
+                    double pagCont1 = sal*0.02;
+                    tfRAmtPagibig.setText(Double.toString(pagCont1));
+                    tfRAmtPagibig.setEditable(true);
+                }
+            } 
+            
+        } else {
+                tfRAmtPagibig.setText("0");
+                tfRAmtPagibig.setEditable(false);
+            }
+    }//GEN-LAST:event_cbApplPagibigActionPerformed
+
+    private void cbApplPagibigKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_cbApplPagibigKeyPressed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox3KeyReleased
+    }//GEN-LAST:event_cbApplPagibigKeyPressed
 
-    private void jCheckBox4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox4ActionPerformed
+    private void cbApplPagibigKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_cbApplPagibigKeyReleased
         // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox4ActionPerformed
+    }//GEN-LAST:event_cbApplPagibigKeyReleased
 
-    private void jCheckBox4KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jCheckBox4KeyPressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox4KeyPressed
+    private void btnCalcGActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcGActionPerformed
+        if(tfGrossIncome.getText().isEmpty() || "0".equals(tfGrossIncome.getText())) {
+            JOptionPane.showMessageDialog(null, "Please calculate gross pay first!",
+                "MotorPH Employee Application", JOptionPane.OK_OPTION);
+        } else {
+        double grossPay = Double.parseDouble(tfGrossIncome.getText());
+        double deductions = Double.parseDouble(tfTotalDed.getText());
+        double tax = Double.parseDouble(tfTaxAmt.getText());
+        
+        
+        double netpay = grossPay+deductions+tax;
+        tfNetIncome.setText(Double.toString(netpay));
+        btnPrint.setEnabled(true);
+        }
+    }//GEN-LAST:event_btnCalcGActionPerformed
 
-    private void jCheckBox4KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jCheckBox4KeyReleased
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox4KeyReleased
-
-    private void jCheckBox5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox5ActionPerformed
-
-    private void jCheckBox5KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jCheckBox5KeyPressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox5KeyPressed
-
-    private void jCheckBox5KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jCheckBox5KeyReleased
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox5KeyReleased
-
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton5ActionPerformed
-
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton6ActionPerformed
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void btnCloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCloseActionPerformed
         frame = new JFrame ("Exit");
         if (JOptionPane.showConfirmDialog(frame, "Confirm if you want to exit","MotorPH Employee App",
             JOptionPane.YES_NO_OPTION)==JOptionPane.YES_NO_OPTION){
         this.dispose();
         }
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_btnCloseActionPerformed
+
+    private void tfAmtTardyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfAmtTardyActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tfAmtTardyActionPerformed
+
+    private void tfMinTardyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfMinTardyActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tfMinTardyActionPerformed
+
+    private void tfEmpNoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfEmpNoKeyTyped
+       
+    }//GEN-LAST:event_tfEmpNoKeyTyped
+
+    private void tfEmpNoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfEmpNoKeyReleased
+      int empNo;
+      try {
+          empNo = Integer.parseInt(tfEmpNo.getText());
+        
+      } catch (NumberFormatException e) {
+                   JOptionPane.showMessageDialog(null, "Invalid input!",
+                "MotorPH Employee Application", JOptionPane.OK_OPTION);
+                   tfEmpNo.setText(null);          
+      }
+    }//GEN-LAST:event_tfEmpNoKeyReleased
+
+    private void btnCalcHoursWorkedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcHoursWorkedActionPerformed
+        SimpleDateFormat Dformat = new SimpleDateFormat("dd/MM/yyyy");
+        
+        if (tfEmpNo.getText()==null || tfLastName.getText()==null || tfFirstName.getText() == null || tfBasicSal.getText()==null || tfHourlyRate.getText()==null || datePayStrt.getDate()== null || datePayEnd.getDate()== null) {
+            JOptionPane.showMessageDialog(null, "Please fill in required fields",
+                    "MotorPH Employee Application", JOptionPane.OK_OPTION);
+        } else {
+            try {
+                Date ps = Dformat.parse(Dformat.format(datePayStrt.getDate()));
+                Date pe = Dformat.parse(Dformat.format(datePayEnd.getDate()));
+
+                long diff = pe.getTime() - ps.getTime();
+                long hours = diff / (60 * 60 * 1000);
+                long days = hours / 24;
+
+                //Assumes that the working days per week is only 5 days with 2 days off
+                if (days == 4) {
+                    long daysw = days + 1;
+                    long hoursw = daysw * 8;
+
+                    tfHourWorked.setText(Long.toString(hoursw));
+                    tfHoursWorked.setText(Long.toString(hoursw));
+
+                    //Calculate salary based on hours worked
+                    double hourlyRate = Double.parseDouble(lblRateSal.getText());
+                    double hoursWorked = Double.parseDouble(tfHoursWorked.getText());
+
+                    double salary = hourlyRate * hoursWorked;
+                    tfAmtSalary.setText(Double.toString(salary));
+                    
+                    tfEmpNo.setEditable(false);
+                    tfLastName.setEditable(false);
+                    tfFirstName.setEditable(false);
+                    tfBasicSal.setEditable(false);
+                    tfHourlyRate.setEditable(false);
+                    datePayStrt.setEnabled(false);
+                    datePayEnd.setEnabled(false);
+                    
+                    tfHoursRegOT.setEditable(true);
+                    tfHoursSunOT.setEditable(true);
+                    tfAmtAllowance.setEditable(true);
+                    tfAmtIncentives.setEditable(true); 
+                    tfAmtOthers.setEditable(true); 
+                    cbApplSSS.setEnabled(true);
+                    cbApplPhealth.setEnabled(true);
+                    cbApplPagibig.setEnabled(true);
+                    
+                    tfDaysAbsent.setEditable(true);
+                    tfMinTardy.setEditable(true);
+                    tfMinUT.setEditable(true);
+                    tfAmtCA.setEditable(true);
+                    tfDedOthers.setEditable(true);
+                    cbApplTax.setEnabled(true);
+                    
+                    btnCalcG.setEnabled(true);
+                    btnPrint.setEnabled(true);
+                } else {
+                    JOptionPane.showMessageDialog(null, "Invalid input!",
+                            "MotorPH Employee Application", JOptionPane.OK_OPTION);
+                    tfHourWorked.setText(null);
+                    tfHoursWorked.setText(null);
+                    tfAmtSalary.setText(null);
+                }
+            } catch (ParseException e) {
+                JOptionPane.showMessageDialog(null, "Invalid input!",
+                        "MotorPH Employee Application", JOptionPane.OK_OPTION);
+                tfHourWorked.setText(null);
+                tfHoursWorked.setText(null);
+                tfAmtSalary.setText(null);
+            }
+        }
+    }//GEN-LAST:event_btnCalcHoursWorkedActionPerformed
+
+    private void tfEmpNoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfEmpNoActionPerformed
+       
+    }//GEN-LAST:event_tfEmpNoActionPerformed
+
+    private void tfEmpNoFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_tfEmpNoFocusLost
+        if(tfEmpNo.getText().length()!=5) {
+              JOptionPane.showMessageDialog(null, "Invalid input!",
+                "MotorPH Employee Application", JOptionPane.OK_OPTION);
+              tfEmpNo.setText(null);
+          }
+    }//GEN-LAST:event_tfEmpNoFocusLost
+
+    private void tfBasicSalKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfBasicSalKeyReleased
+        
+    }//GEN-LAST:event_tfBasicSalKeyReleased
+
+    private void tfHourlyRateKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfHourlyRateKeyReleased
+       if(tfHourlyRate.getText().equals("")) {
+           lblRateSal.setText(null);
+           lblRateRegOT.setText(null);
+           lblRateSunOT.setText(null);
+       } else {
+        //Salary Rate
+        lblRateSal.setText(tfHourlyRate.getText());
+       
+       double hourlyRate = Double.parseDouble(tfHourlyRate.getText());
+       double RegOTRate = Math.round(hourlyRate*1.25);
+       double SunOTRate = Math.round(hourlyRate*1.30);
+       
+        //Regular OT Rate
+       lblRateRegOT.setText(Double.toString(RegOTRate));
+       //Sunday OT Rate
+       lblRateSunOT.setText(Double.toString(SunOTRate));
+       }
+    }//GEN-LAST:event_tfHourlyRateKeyReleased
+
+    private void tfHourlyRateKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfHourlyRateKeyTyped
+        char c = evt.getKeyChar();
+        if (c == KeyEvent.VK_BACK_SPACE) {
+            evt.consume();
+        } else if (Character.isLetter(c) || String.valueOf(c).trim().isEmpty()) {
+            getToolkit().beep();
+            evt.consume();
+        } else {
+            try {
+                Double.valueOf(tfHourlyRate.getText() + c);
+            } catch (NumberFormatException e) {
+                getToolkit().beep();
+                evt.consume();
+            }
+        }
+    }//GEN-LAST:event_tfHourlyRateKeyTyped
+
+    private void tfBasicSalKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfBasicSalKeyTyped
+        char c = evt.getKeyChar();
+        if (c == KeyEvent.VK_BACK_SPACE) {
+            evt.consume();
+        } else if (Character.isLetter(c) || String.valueOf(c).trim().isEmpty()) {
+            getToolkit().beep();
+            evt.consume();
+        } else {
+            try {
+                Double.valueOf(tfBasicSal.getText() + c);
+            } catch (NumberFormatException e) {
+                getToolkit().beep();
+                evt.consume();
+            }
+        }
+    }//GEN-LAST:event_tfBasicSalKeyTyped
+
+    private void tfHourWorkedKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfHourWorkedKeyReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tfHourWorkedKeyReleased
+
+    private void tfHourWorkedKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfHourWorkedKeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tfHourWorkedKeyTyped
+
+    private void datePayStrtKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_datePayStrtKeyReleased
+       
+    }//GEN-LAST:event_datePayStrtKeyReleased
+
+    private void datePayEndKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_datePayEndKeyTyped
+    
+    }//GEN-LAST:event_datePayEndKeyTyped
+
+    private void datePayStrtKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_datePayStrtKeyPressed
+            
+    }//GEN-LAST:event_datePayStrtKeyPressed
+
+    private void tfHoursWorkedInputMethodTextChanged(java.awt.event.InputMethodEvent evt) {//GEN-FIRST:event_tfHoursWorkedInputMethodTextChanged
+       
+    }//GEN-LAST:event_tfHoursWorkedInputMethodTextChanged
+
+    private void tfHoursWorkedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfHoursWorkedActionPerformed
+
+    }//GEN-LAST:event_tfHoursWorkedActionPerformed
+
+    private void tfHoursWorkedCaretUpdate(javax.swing.event.CaretEvent evt) {//GEN-FIRST:event_tfHoursWorkedCaretUpdate
+        
+    }//GEN-LAST:event_tfHoursWorkedCaretUpdate
+
+    private void tfHoursRegOTKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfHoursRegOTKeyReleased
+        if (tfHoursRegOT.getText().isEmpty()) {
+            tfAmtRegOT.setText("0");
+        } else {
+            double regOTR = Double.parseDouble(lblRateRegOT.getText());
+            double regOTH = Double.parseDouble(tfHoursRegOT.getText());
+
+            double regOTA = regOTR * regOTH;
+            tfAmtRegOT.setText(Double.toString(regOTA));
+        }
+    }//GEN-LAST:event_tfHoursRegOTKeyReleased
+
+    private void tfHoursRegOTKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfHoursRegOTKeyTyped
+         char c = evt.getKeyChar();
+        if (c == KeyEvent.VK_BACK_SPACE) {
+            evt.consume();
+        } else if (Character.isLetter(c) || String.valueOf(c).trim().isEmpty()) {
+            getToolkit().beep();
+            evt.consume();
+        } else {
+            try {
+                Double.valueOf(tfHoursRegOT.getText() + c);
+            } catch (NumberFormatException e) {
+                getToolkit().beep();
+                evt.consume();
+            }
+        }
+    }//GEN-LAST:event_tfHoursRegOTKeyTyped
+
+    private void tfHoursSunOTKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfHoursSunOTKeyReleased
+        if (tfHoursSunOT.getText().isEmpty()) {
+            tfAmtSunOT.setText("0");
+        } else {
+        double sunOTR = Double.parseDouble(lblRateSunOT.getText());
+        double sunOTH = Double.parseDouble(tfHoursSunOT.getText());
+        
+        double sunOTA = sunOTR*sunOTH;
+        tfAmtSunOT.setText(Double.toString(sunOTA));
+        }
+    }//GEN-LAST:event_tfHoursSunOTKeyReleased
+
+    private void tfAmtAllowanceKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfAmtAllowanceKeyTyped
+        char c = evt.getKeyChar();
+        if (c == KeyEvent.VK_BACK_SPACE) {
+            evt.consume();
+        } else if (Character.isLetter(c) || String.valueOf(c).trim().isEmpty()) {
+            getToolkit().beep();
+            evt.consume();
+        } else {
+            try {
+                Double.valueOf(tfAmtAllowance.getText() + c);
+            } catch (NumberFormatException e) {
+                getToolkit().beep();
+                evt.consume();
+            }
+        }
+    }//GEN-LAST:event_tfAmtAllowanceKeyTyped
+
+    private void tfAmtIncentivesKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfAmtIncentivesKeyTyped
+        char c = evt.getKeyChar();
+        if (c == KeyEvent.VK_BACK_SPACE) {
+            evt.consume();
+        } else if (Character.isLetter(c) || String.valueOf(c).trim().isEmpty()) {
+            getToolkit().beep();
+            evt.consume();
+        } else {
+            try {
+                Double.valueOf(tfAmtIncentives.getText() + c);
+            } catch (NumberFormatException e) {
+                getToolkit().beep();
+                evt.consume();
+            }
+        }
+    }//GEN-LAST:event_tfAmtIncentivesKeyTyped
+
+    private void tfAmtOthersKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfAmtOthersKeyReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tfAmtOthersKeyReleased
+
+    private void tfAmtOthersKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfAmtOthersKeyTyped
+         char c = evt.getKeyChar();
+        if (c == KeyEvent.VK_BACK_SPACE) {
+            evt.consume();
+        } else if (Character.isLetter(c) || String.valueOf(c).trim().isEmpty()) {
+            getToolkit().beep();
+            evt.consume();
+        } else {
+            try {
+                Double.valueOf(tfAmtOthers.getText() + c);
+            } catch (NumberFormatException e) {
+                getToolkit().beep();
+                evt.consume();
+            }
+        }
+    }//GEN-LAST:event_tfAmtOthersKeyTyped
+
+    private void tfDaysAbsentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfDaysAbsentActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tfDaysAbsentActionPerformed
+
+    private void tfRAmtSSSKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfRAmtSSSKeyTyped
+        char c = evt.getKeyChar();
+        if (c == KeyEvent.VK_BACK_SPACE) {
+            evt.consume();
+        } else if (Character.isLetter(c) || String.valueOf(c).trim().isEmpty()) {
+            getToolkit().beep();
+            evt.consume();
+        } else {
+            try {
+                Double.valueOf(tfRAmtSSS.getText() + c);
+            } catch (NumberFormatException e) {
+                getToolkit().beep();
+                evt.consume();
+            }
+        }
+    }//GEN-LAST:event_tfRAmtSSSKeyTyped
+
+    private void tfRAmtPhealthKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfRAmtPhealthKeyTyped
+           char c = evt.getKeyChar();
+        if (c == KeyEvent.VK_BACK_SPACE) {
+            evt.consume();
+        } else if (Character.isLetter(c) || String.valueOf(c).trim().isEmpty()) {
+            getToolkit().beep();
+            evt.consume();
+        } else {
+            try {
+                Double.valueOf(tfRAmtPhealth.getText() + c);
+            } catch (NumberFormatException e) {
+                getToolkit().beep();
+                evt.consume();
+            }
+        }
+    }//GEN-LAST:event_tfRAmtPhealthKeyTyped
+
+    private void tfRAmtPagibigKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfRAmtPagibigKeyTyped
+            char c = evt.getKeyChar();
+        if (c == KeyEvent.VK_BACK_SPACE) {
+            evt.consume();
+        } else if (Character.isLetter(c) || String.valueOf(c).trim().isEmpty()) {
+            getToolkit().beep();
+            evt.consume();
+        } else {
+            try {
+                Double.valueOf(tfRAmtPagibig.getText() + c);
+            } catch (NumberFormatException e) {
+                getToolkit().beep();
+                evt.consume();
+            }
+        }
+    }//GEN-LAST:event_tfRAmtPagibigKeyTyped
+
+    private void tfHoursSunOTKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfHoursSunOTKeyTyped
+        char c = evt.getKeyChar();
+        if (c == KeyEvent.VK_BACK_SPACE) {
+            evt.consume();
+        } else if (Character.isLetter(c) || String.valueOf(c).trim().isEmpty()) {
+            getToolkit().beep();
+            evt.consume();
+        } else {
+            try {
+                Double.valueOf(tfHoursSunOT.getText() + c);
+            } catch (NumberFormatException e) {
+                getToolkit().beep();
+                evt.consume();
+            }
+        }
+    }//GEN-LAST:event_tfHoursSunOTKeyTyped
+
+    private void tfDaysAbsentKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfDaysAbsentKeyReleased
+        if (tfDaysAbsent.getText().isEmpty()) {
+            tfAmtAbsent.setText("0");
+        } else {
+            double noDays = Double.parseDouble(tfDaysAbsent.getText());
+            double hoRate = Double.parseDouble(tfHourlyRate.getText());
+
+            double absent = hoRate*8*noDays;
+            tfAmtAbsent.setText(Double.toString(absent));
+        }
+    }//GEN-LAST:event_tfDaysAbsentKeyReleased
+
+    private void tfMinTardyKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfMinTardyKeyReleased
+        if (tfMinTardy.getText().isEmpty()) {
+            tfAmtTardy.setText("0");
+        } else {
+            double minTar = Double.parseDouble(tfMinTardy.getText());
+            double hoRate = Double.parseDouble(tfHourlyRate.getText());
+
+            double tardy = hoRate/60*minTar;
+            tfAmtTardy.setText(Double.toString(tardy));
+        }
+    }//GEN-LAST:event_tfMinTardyKeyReleased
+
+    private void tfMinUTKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfMinUTKeyReleased
+        if (tfMinUT.getText().isEmpty()) {
+            tfAmtUT.setText("0");
+        } else {
+            double hoUT = Double.parseDouble(tfMinUT.getText());
+            double hoRate = Double.parseDouble(tfHourlyRate.getText());
+
+            double underT = hoRate*hoUT;
+            tfAmtUT.setText(Double.toString(underT));
+        }
+    }//GEN-LAST:event_tfMinUTKeyReleased
+
+    private void tfDaysAbsentKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfDaysAbsentKeyTyped
+   char c = evt.getKeyChar();
+        if (c == KeyEvent.VK_BACK_SPACE) {
+            evt.consume();
+        } else if (Character.isLetter(c) || String.valueOf(c).trim().isEmpty()) {
+            getToolkit().beep();
+            evt.consume();
+        } else {
+            try {
+                Double.valueOf(tfHoursRegOT.getText() + c);
+            } catch (NumberFormatException e) {
+                getToolkit().beep();
+                evt.consume();
+            }
+        }
+    }//GEN-LAST:event_tfDaysAbsentKeyTyped
+
+    private void tfMinTardyKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfMinTardyKeyTyped
+        char c = evt.getKeyChar();
+        if (c == KeyEvent.VK_BACK_SPACE) {
+            evt.consume();
+        } else if (Character.isLetter(c) || String.valueOf(c).trim().isEmpty()) {
+            getToolkit().beep();
+            evt.consume();
+        } else {
+            try {
+                Double.valueOf(tfHoursRegOT.getText() + c);
+            } catch (NumberFormatException e) {
+                getToolkit().beep();
+                evt.consume();
+            }
+        }
+    }//GEN-LAST:event_tfMinTardyKeyTyped
+
+    private void tfMinUTKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfMinUTKeyTyped
+        char c = evt.getKeyChar();
+        if (c == KeyEvent.VK_BACK_SPACE) {
+            evt.consume();
+        } else if (Character.isLetter(c) || String.valueOf(c).trim().isEmpty()) {
+            getToolkit().beep();
+            evt.consume();
+        } else {
+            try {
+                Double.valueOf(tfHoursRegOT.getText() + c);
+            } catch (NumberFormatException e) {
+                getToolkit().beep();
+                evt.consume();
+            }
+        }
+    }//GEN-LAST:event_tfMinUTKeyTyped
+
+    private void tfAmtCAKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfAmtCAKeyTyped
+        char c = evt.getKeyChar();
+        if (c == KeyEvent.VK_BACK_SPACE) {
+            evt.consume();
+        } else if (Character.isLetter(c) || String.valueOf(c).trim().isEmpty()) {
+            getToolkit().beep();
+            evt.consume();
+        } else {
+            try {
+                Double.valueOf(tfHoursRegOT.getText() + c);
+            } catch (NumberFormatException e) {
+                getToolkit().beep();
+                evt.consume();
+            }
+        }
+    }//GEN-LAST:event_tfAmtCAKeyTyped
+
+    private void tfDedOthersKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfDedOthersKeyTyped
+        char c = evt.getKeyChar();
+        if (c == KeyEvent.VK_BACK_SPACE) {
+            evt.consume();
+        } else if (Character.isLetter(c) || String.valueOf(c).trim().isEmpty()) {
+            getToolkit().beep();
+            evt.consume();
+        } else {
+            try {
+                Double.valueOf(tfHoursRegOT.getText() + c);
+            } catch (NumberFormatException e) {
+                getToolkit().beep();
+                evt.consume();
+            }
+        }
+    }//GEN-LAST:event_tfDedOthersKeyTyped
+
+    private void btnResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResetActionPerformed
+                    tfEmpNo.setEditable(true);
+                    tfLastName.setEditable(true);
+                    tfFirstName.setEditable(true);
+                    tfBasicSal.setEditable(true);
+                    tfHourlyRate.setEditable(true);
+                    datePayStrt.setEnabled(true);
+                    datePayEnd.setEnabled(true);
+                    
+                    tfAmtRegOT.setText("0");
+                    tfAmtRegOT.setEditable(false);
+                    tfAmtSunOT.setText("0");
+                    tfAmtSunOT.setEditable(false);
+                    
+                    tfRAmtSSS.setText("0");
+                    tfRAmtSSS.setEditable(false);
+                    tfRAmtPhealth.setText("0");
+                    tfRAmtPhealth.setEditable(false);
+                    tfRAmtPagibig.setText("0");
+                    tfRAmtPagibig.setEditable(false);
+                    
+                    tfAmtAbsent.setText("0");
+                    tfAmtAbsent.setEditable(false);
+                    tfAmtTardy.setText("0");
+                    tfAmtTardy.setEditable(false);
+                    tfAmtUT.setText("0");
+                    tfAmtUT.setEditable(false);
+                    
+                    tfHoursRegOT.setEditable(false);
+                    tfHoursRegOT.setText(null);
+                    tfHoursSunOT.setEditable(false);
+                    tfHoursSunOT.setText(null);
+                    tfAmtAllowance.setEditable(false);
+                    tfAmtAllowance.setText(null);
+                    tfAmtIncentives.setEditable(false);
+                    tfAmtIncentives.setText(null);
+                    tfAmtOthers.setEditable(false); 
+                    tfAmtOthers.setText(null);
+                    cbApplSSS.setEnabled(false);
+                    cbApplSSS.setSelected(false);
+                    cbApplPhealth.setEnabled(false);
+                    cbApplPhealth.setSelected(false);
+                    cbApplPagibig.setEnabled(false);
+                    cbApplPagibig.setSelected(false);
+                    
+                    tfDaysAbsent.setEditable(false);
+                    tfDaysAbsent.setText(null);
+                    tfMinTardy.setEditable(false);
+                    tfMinTardy.setText(null);
+                    tfMinUT.setEditable(false);
+                    tfMinUT.setText(null);
+                    tfAmtCA.setEditable(false);
+                    tfAmtCA.setText(null);
+                    tfDedOthers.setEditable(false);
+                    tfDedOthers.setText(null);
+                    cbApplTax.setEnabled(false);
+                    cbApplTax.setSelected(false);
+                    tfTaxAmt.setText(null);
+                    
+                    btnCalcG.setEnabled(false);
+                    btnPrint.setEnabled(false);
+    }//GEN-LAST:event_btnResetActionPerformed
+
+    private void cbApplTaxKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_cbApplTaxKeyReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbApplTaxKeyReleased
+
+    private void cbApplTaxKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_cbApplTaxKeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbApplTaxKeyPressed
+
+    private void cbApplTaxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbApplTaxActionPerformed
+         if (cbApplTax.isSelected()) {
+            
+                tfTaxAmt.setEditable(true);
+
+        } else {
+            tfTaxAmt.setText("0");
+            tfTaxAmt.setEditable(false);
+        }
+    }//GEN-LAST:event_cbApplTaxActionPerformed
+
+    private void btnCalcGrossPayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcGrossPayActionPerformed
+        double num1 = Double.parseDouble(tfAmtSalary.getText());
+        double num2 = Double.parseDouble(tfAmtRegOT.getText());
+        double num3 = Double.parseDouble(tfAmtSunOT.getText());
+        double num4 = Double.parseDouble(tfAmtAllowance.getText());
+        double num5 = Double.parseDouble(tfAmtIncentives.getText());
+        double num6 = Double.parseDouble(tfAmtOthers.getText());
+        
+        double grosspay = num1+num2+num3+num4+num5+num6;
+        tfGrossIncome.setText(Double.toString(grosspay));
+        btnCalcG.setEnabled(true);
+        
+    }//GEN-LAST:event_btnCalcGrossPayActionPerformed
+
+    private void btnCalcDeductionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcDeductionActionPerformed
+        if(tfGrossIncome.getText().isEmpty() || "0".equals(tfGrossIncome.getText())) {
+            JOptionPane.showMessageDialog(null, "Please calculate gross pay first!",
+                "MotorPH Employee Application", JOptionPane.OK_OPTION);
+        } else {
+        double num1 = Double.parseDouble(tfRAmtSSS.getText());
+        double num2 = Double.parseDouble(tfRAmtPhealth.getText());
+        double num3 = Double.parseDouble(tfRAmtPagibig.getText());
+        double num4 = Double.parseDouble(tfAmtAbsent.getText());
+        double num5 = Double.parseDouble(tfAmtTardy.getText());
+        double num6 = Double.parseDouble(tfAmtUT.getText());
+        double num7 = Double.parseDouble(tfAmtCA.getText());
+        double num8 = Double.parseDouble(tfDedOthers.getText());
+        
+        double deductions = num1+num2+num3+num4+num5+num6+num7+num8;
+        tfTotalDed.setText(Double.toString(deductions));
+        }
+    }//GEN-LAST:event_btnCalcDeductionActionPerformed
+
+    private void tfTaxAmtKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfTaxAmtKeyTyped
+        char c = evt.getKeyChar();
+        if (c == KeyEvent.VK_BACK_SPACE) {
+            evt.consume();
+        } else if (Character.isLetter(c) || String.valueOf(c).trim().isEmpty()) {
+            getToolkit().beep();
+            evt.consume();
+        } else {
+            try {
+                Double.valueOf(tfTaxAmt.getText() + c);
+            } catch (NumberFormatException e) {
+                getToolkit().beep();
+                evt.consume();
+            }
+        }
+    }//GEN-LAST:event_tfTaxAmtKeyTyped
+
+    private void btnPrintActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPrintActionPerformed
+                    jTextArea1.append("\t\t Employee Payslip \n\n" +
+       
+                     "Employee ID:\t\t\t" + tfEmpNo.getText()+"\n\n"+
+                     "Name:\t\t\t" + tfFirstName.getText()+ " " +tfLastName.getText()+"\n\n"+
+                     "Monthly Rate:\t\t\t" + tfBasicSal.getText()+"\n\n"+
+                    "\n==================================================\n" +
+                    "Cut-off Date:\t\t\t" + datePayStrt.getDate()+"\n\n"+
+                    "Total Hours:\t\t\t" + tfHoursWorked.getText()+"\n\n"+
+                    "Reg OT:\t\t\t" + tfAmtRegOT.getText()+"\n\n"+
+                    "Sun OT:\t\t\t" + tfAmtSunOT.getText()+"\n\n"+
+                    "Allowance:\t\t\t" + tfAmtAllowance.getText()+"\n\n"+
+                    "Incentives:\t\t\t" + tfAmtIncentives.getText()+ "\n\n"+
+                    "Gross Pay:\t\t\t" + tfGrossIncome.getText()+"\n\n"+
+                    "\n==================================================\n" +
+                    "SSS:\t\t\t" + tfRAmtSSS.getText()+"\n\n"+
+                    "PhilHealth:\t\t\t" + tfRAmtPhealth.getText()+"\n\n"+
+                    "Pagibig:\t\t\t" + tfRAmtPagibig.getText()+"\n\n"+
+                    "Absences:\t\t\t" + tfAmtAbsent.getText()+"\n\n"+
+                    "Lates:\t\t\t" + tfAmtTardy.getText()+"\n\n"+
+                    "Undertime:\t\t\t" + tfAmtUT.getText()+"\n\n"+
+                    "Cash Advances:\t\t\t" + tfAmtCA.getText()+"\n\n"+
+                    "Others:\t\t\t" + tfDedOthers.getText()+"\n\n"+
+                    "Tax:\t\t\t" + tfTaxAmt.getText()+"\n\n"+
+                    "\n==================================================\n" +
+                    "NET INCOME:\t\t\t" + tfNetIncome.getText()+"\n\n"+
+                    "==================================================" 
+                    
+                    
+       );
+        try {
+            jTextArea1.print();
+        } catch (PrinterException ex) {
+            Logger.getLogger(Payroll.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_btnPrintActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1058,127 +2010,121 @@ public class Payroll extends javax.swing.JFrame {
                     break;
                 }
             }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Payroll.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Payroll.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Payroll.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(Payroll.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        
+        //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Payroll().setVisible(true);
-            }
+        java.awt.EventQueue.invokeLater(() -> {
+            new Payroll().setVisible(true);
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JCheckBox jCheckBox2;
-    private javax.swing.JCheckBox jCheckBox3;
-    private javax.swing.JCheckBox jCheckBox4;
-    private javax.swing.JCheckBox jCheckBox5;
-    private com.toedter.calendar.JDateChooser jDateChooser1;
-    private com.toedter.calendar.JDateChooser jDateChooser2;
-    private com.toedter.calendar.JDateChooser jDateChooser3;
+    private javax.swing.JButton btnCalcDeduction;
+    private javax.swing.JButton btnCalcG;
+    private javax.swing.JButton btnCalcGrossPay;
+    private javax.swing.JButton btnCalcHoursWorked;
+    private javax.swing.JButton btnClose;
+    private javax.swing.JButton btnPrint;
+    private javax.swing.JButton btnReset;
+    private javax.swing.JCheckBox cbApplPagibig;
+    private javax.swing.JCheckBox cbApplPhealth;
+    private javax.swing.JCheckBox cbApplSSS;
+    private javax.swing.JCheckBox cbApplTax;
+    private com.toedter.calendar.JDateChooser datePayEnd;
+    private com.toedter.calendar.JDateChooser datePayStrt;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel20;
-    private javax.swing.JLabel jLabel21;
-    private javax.swing.JLabel jLabel22;
-    private javax.swing.JLabel jLabel23;
-    private javax.swing.JLabel jLabel24;
-    private javax.swing.JLabel jLabel25;
-    private javax.swing.JLabel jLabel26;
-    private javax.swing.JLabel jLabel27;
-    private javax.swing.JLabel jLabel28;
-    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel30;
-    private javax.swing.JLabel jLabel31;
-    private javax.swing.JLabel jLabel32;
-    private javax.swing.JLabel jLabel33;
-    private javax.swing.JLabel jLabel34;
-    private javax.swing.JLabel jLabel35;
-    private javax.swing.JLabel jLabel36;
-    private javax.swing.JLabel jLabel37;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel40;
-    private javax.swing.JLabel jLabel41;
-    private javax.swing.JLabel jLabel42;
-    private javax.swing.JLabel jLabel43;
-    private javax.swing.JLabel jLabel44;
-    private javax.swing.JLabel jLabel45;
-    private javax.swing.JLabel jLabel46;
-    private javax.swing.JLabel jLabel47;
-    private javax.swing.JLabel jLabel48;
-    private javax.swing.JLabel jLabel49;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
-    private javax.swing.JPanel jPanel6;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator4;
     private javax.swing.JSeparator jSeparator5;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField10;
-    private javax.swing.JTextField jTextField11;
-    private javax.swing.JTextField jTextField12;
-    private javax.swing.JTextField jTextField13;
-    private javax.swing.JTextField jTextField14;
-    private javax.swing.JTextField jTextField15;
-    private javax.swing.JTextField jTextField16;
-    private javax.swing.JTextField jTextField17;
-    private javax.swing.JTextField jTextField18;
-    private javax.swing.JTextField jTextField19;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField20;
-    private javax.swing.JTextField jTextField21;
-    private javax.swing.JTextField jTextField22;
-    private javax.swing.JTextField jTextField24;
-    private javax.swing.JTextField jTextField25;
-    private javax.swing.JTextField jTextField27;
-    private javax.swing.JTextField jTextField28;
-    private javax.swing.JTextField jTextField29;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField30;
-    private javax.swing.JTextField jTextField31;
-    private javax.swing.JTextField jTextField32;
-    private javax.swing.JTextField jTextField33;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
-    private javax.swing.JTextField jTextField8;
-    private javax.swing.JTextField jTextField9;
+    private javax.swing.JSeparator jSeparator6;
+    private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JLabel lblAbsences;
+    private javax.swing.JLabel lblAllowance;
+    private javax.swing.JLabel lblBasicSal;
+    private javax.swing.JLabel lblCA;
+    private javax.swing.JLabel lblDed;
+    private javax.swing.JLabel lblDedAmt;
+    private javax.swing.JLabel lblDedOthers;
+    private javax.swing.JLabel lblDedStatus;
+    private javax.swing.JLabel lblDeductions;
+    private javax.swing.JLabel lblEmpD;
+    private javax.swing.JLabel lblEmpNo;
+    private javax.swing.JLabel lblFirstName;
+    private javax.swing.JLabel lblGross;
+    private javax.swing.JLabel lblHourlyRate;
+    private javax.swing.JLabel lblHours;
+    private javax.swing.JLabel lblInc;
+    private javax.swing.JLabel lblIncAmount;
+    private javax.swing.JLabel lblIncRate;
+    private javax.swing.JLabel lblIncentives;
+    private javax.swing.JLabel lblIncome;
+    private javax.swing.JLabel lblLastName;
+    private javax.swing.JLabel lblOthers;
+    private javax.swing.JLabel lblPagibig;
+    private javax.swing.JLabel lblPayCov;
+    private javax.swing.JLabel lblPayEnd;
+    private javax.swing.JLabel lblPayStrt;
+    private javax.swing.JLabel lblPhilhealth;
+    private javax.swing.JLabel lblRateRegOT;
+    private javax.swing.JLabel lblRateSal;
+    private javax.swing.JLabel lblRateSunOT;
+    private javax.swing.JLabel lblRegOT;
+    private javax.swing.JLabel lblSSS;
+    private javax.swing.JLabel lblSalary;
+    private javax.swing.JLabel lblSummary;
+    private javax.swing.JLabel lblSunOT;
+    private javax.swing.JLabel lblTardy;
+    private javax.swing.JLabel lblTax;
+    private javax.swing.JLabel lblTaxInc;
+    private javax.swing.JLabel lblTotalDed;
+    private javax.swing.JLabel lblUndertime;
+    private javax.swing.JPanel pnlDeductions;
+    private javax.swing.JPanel pnlEmpD;
+    private javax.swing.JPanel pnlIncome;
+    private javax.swing.JPanel pnlTax;
+    private javax.swing.JPanel pnlTitle;
+    private javax.swing.JTextField tfAmtAbsent;
+    private javax.swing.JTextField tfAmtAllowance;
+    private javax.swing.JTextField tfAmtCA;
+    private javax.swing.JTextField tfAmtIncentives;
+    private javax.swing.JTextField tfAmtOthers;
+    private javax.swing.JTextField tfAmtRegOT;
+    private javax.swing.JTextField tfAmtSalary;
+    private javax.swing.JTextField tfAmtSunOT;
+    private javax.swing.JTextField tfAmtTardy;
+    private javax.swing.JTextField tfAmtUT;
+    private javax.swing.JTextField tfBasicSal;
+    private javax.swing.JTextField tfDaysAbsent;
+    private javax.swing.JTextField tfDedOthers;
+    private javax.swing.JTextField tfEmpNo;
+    private javax.swing.JTextField tfFirstName;
+    private javax.swing.JTextField tfGrossIncome;
+    private javax.swing.JTextField tfHourWorked;
+    private javax.swing.JTextField tfHourlyRate;
+    private javax.swing.JTextField tfHoursRegOT;
+    private javax.swing.JTextField tfHoursSunOT;
+    private javax.swing.JTextField tfHoursWorked;
+    private javax.swing.JTextField tfLastName;
+    private javax.swing.JTextField tfMinTardy;
+    private javax.swing.JTextField tfMinUT;
+    private javax.swing.JTextField tfNetIncome;
+    private javax.swing.JTextField tfRAmtPagibig;
+    private javax.swing.JTextField tfRAmtPhealth;
+    private javax.swing.JTextField tfRAmtSSS;
+    private javax.swing.JTextField tfTaxAmt;
+    private javax.swing.JTextField tfTotalDed;
     // End of variables declaration//GEN-END:variables
 }
