@@ -11,8 +11,8 @@ package motorphapplication;
 public class Motorphapplication {
 
     public static void main(String[] args) {
-        Payroll n = new Payroll();
-        n.setLocationRelativeTo(null);
-        n.setVisible(true);
+        Home home = new Home();
+        home.setLocationRelativeTo(null);
+        home.setVisible(true);
     }
 }
