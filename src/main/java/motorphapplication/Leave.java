@@ -287,7 +287,7 @@ public class Leave extends javax.swing.JFrame {
         jLabel8.setText("0");
 
         jButton7.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
-        jButton7.setText("Refresh");
+        jButton7.setText("Reset");
         jButton7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton7ActionPerformed(evt);
