@@ -247,6 +247,7 @@ public class Employees extends javax.swing.JFrame {
             }
         });
 
+        jDateChooser2.setDateFormatString("dd/MM/yyyy");
         jDateChooser2.setEnabled(false);
 
         jTable1.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
@@ -458,20 +459,11 @@ public class Employees extends javax.swing.JFrame {
     }//GEN-LAST:event_btnCloseActionPerformed
 
     private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
-        SimpleDateFormat Dformat = new SimpleDateFormat ("dd/MM/yyyy");
+    
          ArrayList<String> arrayList = new ArrayList<String>();
          
         String empno = jTextField5.getText();
-        String fname = jTextField4.getText();
-        String lname = jTextField3.getText();
-        String date1 = Dformat.format(jDateChooser2.getDate());
-        String address = jTextField6.getText();
-        String phone = jTextField7.getText();
-        String status = (String) jComboBox1.getSelectedItem();
-        String position = jTextField8.getText();
-        String sup = jTextField9.getText();
-        String sal = jTextField10.getText();
-        String rate = jTextField11.getText();
+       
        
          try {
             BufferedReader reader=new BufferedReader(new FileReader(filename));
@@ -557,7 +549,7 @@ public class Employees extends javax.swing.JFrame {
         
         try {
             CSVWriter writer = new CSVWriter(new FileWriter(filename,true));
-            writer.writeNext(record);
+            writer.writeNext(record,false);
             writer.close();
             
         } catch (Exception ex) {
