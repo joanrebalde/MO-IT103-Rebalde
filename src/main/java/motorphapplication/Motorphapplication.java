@@ -11,8 +11,8 @@ package motorphapplication;
 public class Motorphapplication {
 
     public static void main(String[] args) {
-        Home home = new Home();
-        home.setLocationRelativeTo(null);
-        home.setVisible(true);
+        Login login = new Login();
+        login.setLocationRelativeTo(null);
+        login.setVisible(true);
     }
 }

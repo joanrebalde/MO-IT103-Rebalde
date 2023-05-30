@@ -5,6 +5,7 @@
 package motorphapplication;
 
 import com.opencsv.CSVWriter;
+import java.awt.event.KeyEvent;
 import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.FileReader;
@@ -209,11 +210,21 @@ public class Employees extends javax.swing.JFrame {
         jLabel12.setText("Basic Salary");
 
         jTextField10.setEditable(false);
+        jTextField10.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTextField10KeyTyped(evt);
+            }
+        });
 
         jLabel13.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         jLabel13.setText("Hourly Rate");
 
         jTextField11.setEditable(false);
+        jTextField11.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTextField11KeyTyped(evt);
+            }
+        });
 
         btnClose.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         btnClose.setText("Close");
@@ -578,6 +589,7 @@ public class Employees extends javax.swing.JFrame {
             jTextField10.setEditable(false);
             jTextField11.setText(null);
             jTextField11.setEditable(false);
+        
     }//GEN-LAST:event_btnSaveActionPerformed
 
     private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
@@ -640,6 +652,40 @@ public class Employees extends javax.swing.JFrame {
             jTextField11.setEditable(false);
         }
     }//GEN-LAST:event_jCheckBox1ActionPerformed
+
+    private void jTextField11KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField11KeyTyped
+        char c = evt.getKeyChar();
+        if (c == KeyEvent.VK_BACK_SPACE) {
+            evt.consume();
+        } else if (Character.isLetter(c) || String.valueOf(c).trim().isEmpty()) {
+            getToolkit().beep();
+            evt.consume();
+        } else {
+            try {
+                Double.valueOf(jTextField11.getText() + c);
+            } catch (NumberFormatException e) {
+                getToolkit().beep();
+                evt.consume();
+            }
+        }
+    }//GEN-LAST:event_jTextField11KeyTyped
+
+    private void jTextField10KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField10KeyTyped
+      char c = evt.getKeyChar();
+        if (c == KeyEvent.VK_BACK_SPACE) {
+            evt.consume();
+        } else if (Character.isLetter(c) || String.valueOf(c).trim().isEmpty()) {
+            getToolkit().beep();
+            evt.consume();
+        } else {
+            try {
+                Double.valueOf(jTextField10.getText() + c);
+            } catch (NumberFormatException e) {
+                getToolkit().beep();
+                evt.consume();
+            }
+        }  
+    }//GEN-LAST:event_jTextField10KeyTyped
 
     /**
      * @param args the command line arguments
