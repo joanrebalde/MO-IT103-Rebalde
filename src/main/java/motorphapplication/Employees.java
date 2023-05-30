@@ -133,6 +133,8 @@ public class Employees extends javax.swing.JFrame {
         jCheckBox1 = new javax.swing.JCheckBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
+        setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(0, 0, 0));
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -474,7 +476,7 @@ public class Employees extends javax.swing.JFrame {
          ArrayList<String> arrayList = new ArrayList<String>();
          
         String empno = jTextField5.getText();
-       
+        
        
          try {
             BufferedReader reader=new BufferedReader(new FileReader(filename));
@@ -589,6 +591,8 @@ public class Employees extends javax.swing.JFrame {
             jTextField10.setEditable(false);
             jTextField11.setText(null);
             jTextField11.setEditable(false);
+            jCheckBox1.setSelected(false);
+            
         
     }//GEN-LAST:event_btnSaveActionPerformed
 

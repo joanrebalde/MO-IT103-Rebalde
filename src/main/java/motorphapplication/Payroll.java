@@ -4,8 +4,12 @@
  */
 package motorphapplication;
 
+import com.opencsv.CSVWriter;
 import java.awt.event.KeyEvent;
 import java.awt.print.PrinterException;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.FileWriter;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -13,13 +17,15 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import static motorphapplication.Login.filename;
 
 /**
  *
  * @author Joan
  */
 public class Payroll extends javax.swing.JFrame {
-
+    public  static  String filename="Payroll.csv";
+    public  static  String filename1="Employee.csv";
     /**
      * Creates new form Payroll
      */
@@ -60,6 +66,7 @@ public class Payroll extends javax.swing.JFrame {
         btnCalcHoursWorked = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         btnReset = new javax.swing.JButton();
+        btnEmpSearch = new javax.swing.JButton();
         pnlIncome = new javax.swing.JPanel();
         lblIncome = new javax.swing.JLabel();
         jSeparator2 = new javax.swing.JSeparator();
@@ -138,9 +145,11 @@ public class Payroll extends javax.swing.JFrame {
         btnPrint = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
+        btnSave = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
+        setResizable(false);
 
         pnlTitle.setBackground(new java.awt.Color(0, 0, 0));
         pnlTitle.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -196,12 +205,17 @@ public class Payroll extends javax.swing.JFrame {
         lblFirstName.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         lblFirstName.setText("First Name");
 
+        tfFirstName.setEditable(false);
+
+        tfLastName.setEditable(false);
+
         lblEmpD.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         lblEmpD.setText("Employee Details");
 
         lblBasicSal.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         lblBasicSal.setText("Basic Salary");
 
+        tfBasicSal.setEditable(false);
         tfBasicSal.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 tfBasicSalKeyReleased(evt);
@@ -214,6 +228,14 @@ public class Payroll extends javax.swing.JFrame {
         lblHourlyRate.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
         lblHourlyRate.setText("Hourly Rate");
 
+        tfHourlyRate.setEditable(false);
+        tfHourlyRate.addInputMethodListener(new java.awt.event.InputMethodListener() {
+            public void caretPositionChanged(java.awt.event.InputMethodEvent evt) {
+            }
+            public void inputMethodTextChanged(java.awt.event.InputMethodEvent evt) {
+                tfHourlyRateInputMethodTextChanged(evt);
+            }
+        });
         tfHourlyRate.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 tfHourlyRateKeyReleased(evt);
@@ -278,6 +300,14 @@ public class Payroll extends javax.swing.JFrame {
             }
         });
 
+        btnEmpSearch.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        btnEmpSearch.setText("<<");
+        btnEmpSearch.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEmpSearchActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout pnlEmpDLayout = new javax.swing.GroupLayout(pnlEmpD);
         pnlEmpD.setLayout(pnlEmpDLayout);
         pnlEmpDLayout.setHorizontalGroup(
@@ -285,18 +315,20 @@ public class Payroll extends javax.swing.JFrame {
             .addGroup(pnlEmpDLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(pnlEmpDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(pnlEmpDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(pnlEmpDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, pnlEmpDLayout.createSequentialGroup()
-                                .addComponent(lblFirstName)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(tfFirstName, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, pnlEmpDLayout.createSequentialGroup()
-                                .addComponent(lblLastName, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(30, 30, 30)
-                                .addComponent(tfLastName, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(lblEmpNo, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addComponent(tfEmpNo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(pnlEmpDLayout.createSequentialGroup()
+                        .addGroup(pnlEmpDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblLastName, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblEmpNo, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblFirstName))
+                        .addGap(30, 30, 30)
+                        .addGroup(pnlEmpDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(tfFirstName, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(pnlEmpDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addGroup(pnlEmpDLayout.createSequentialGroup()
+                                    .addComponent(tfEmpNo, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(btnEmpSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(tfLastName, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addComponent(lblEmpD, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(pnlEmpDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pnlEmpDLayout.createSequentialGroup()
@@ -345,18 +377,16 @@ public class Payroll extends javax.swing.JFrame {
                     .addGroup(pnlEmpDLayout.createSequentialGroup()
                         .addGroup(pnlEmpDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(lblEmpNo)
-                            .addComponent(tfEmpNo, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(tfEmpNo, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnEmpSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(pnlEmpDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(tfLastName, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(lblLastName))
-                        .addGroup(pnlEmpDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(pnlEmpDLayout.createSequentialGroup()
-                                .addGap(11, 11, 11)
-                                .addComponent(lblFirstName))
-                            .addGroup(pnlEmpDLayout.createSequentialGroup()
-                                .addGap(8, 8, 8)
-                                .addComponent(tfFirstName, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(6, 6, 6)
+                        .addGroup(pnlEmpDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblFirstName)
+                            .addComponent(tfFirstName, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(pnlEmpDLayout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(pnlEmpDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1099,16 +1129,14 @@ public class Payroll extends javax.swing.JFrame {
             .addGroup(pnlTaxLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(pnlTaxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(pnlTaxLayout.createSequentialGroup()
-                        .addComponent(lblTax, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(lblTax, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(pnlTaxLayout.createSequentialGroup()
                         .addComponent(lblTaxInc)
                         .addGap(42, 42, 42)
                         .addComponent(cbApplTax)
                         .addGap(48, 48, 48)
-                        .addComponent(tfTaxAmt, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addComponent(tfTaxAmt, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(27, Short.MAX_VALUE))
         );
         pnlTaxLayout.setVerticalGroup(
             pnlTaxLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1122,7 +1150,7 @@ public class Payroll extends javax.swing.JFrame {
                     .addComponent(cbApplTax)
                     .addComponent(lblTaxInc)
                     .addComponent(tfTaxAmt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(15, Short.MAX_VALUE))
         );
 
         btnCalcG.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
@@ -1156,62 +1184,80 @@ public class Payroll extends javax.swing.JFrame {
         jTextArea1.setRows(5);
         jScrollPane1.setViewportView(jTextArea1);
 
+        btnSave.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        btnSave.setText("Save");
+        btnSave.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSaveActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(363, 363, 363)
-                        .addComponent(btnCalcG, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addComponent(pnlTitle, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(276, 276, 276)
-                        .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(36, 36, 36)
-                        .addComponent(btnPrint, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnClose, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(pnlIncome, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(pnlTax, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(pnlIncome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(pnlTax, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(pnlDeductions, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(pnlEmpD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(30, 30, 30)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 455, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                        .addComponent(pnlEmpD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(363, 363, 363)
+                        .addComponent(btnCalcG, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(276, 276, 276)
+                        .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(50, 50, 50)
+                        .addComponent(btnSave, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnClose, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 455, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnPrint, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(134, 134, 134))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(pnlTitle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addComponent(pnlTitle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addGap(179, 179, 179)
+                                .addComponent(pnlIncome, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(pnlTax, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(pnlEmpD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(pnlDeductions, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(pnlEmpD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnCalcG, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(pnlDeductions, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(179, 179, 179)
-                        .addComponent(pnlIncome, javax.swing.GroupLayout.PREFERRED_SIZE, 327, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(pnlTax, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnCalcG, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(btnPrint, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(btnClose, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 713, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btnPrint, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnClose, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnSave, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING)
         );
 
         pack();
@@ -1368,6 +1414,47 @@ public class Payroll extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Please fill in required fields",
                     "MotorPH Employee Application", JOptionPane.OK_OPTION);
         } else {
+            tfEmpNo.setEditable(false);
+                    datePayStrt.setEnabled(false);
+                    datePayEnd.setEnabled(false);
+                    
+                    tfHoursRegOT.setEditable(true);
+                    tfHoursSunOT.setEditable(true);
+                    tfAmtAllowance.setEditable(true);
+                    tfAmtIncentives.setEditable(true); 
+                    tfAmtOthers.setEditable(true); 
+                    cbApplSSS.setEnabled(true);
+                    cbApplPhealth.setEnabled(true);
+                    cbApplPagibig.setEnabled(true);
+                    
+                    tfDaysAbsent.setEditable(true);
+                    tfMinTardy.setEditable(true);
+                    tfMinUT.setEditable(true);
+                    tfAmtCA.setEditable(true);
+                    tfDedOthers.setEditable(true);
+                    cbApplTax.setEnabled(true);
+                    
+                    btnCalcG.setEnabled(true);
+                    btnPrint.setEnabled(true);
+                    
+            if (tfHourlyRate.getText().equals("")) {
+                lblRateSal.setText(null);
+                lblRateRegOT.setText(null);
+                lblRateSunOT.setText(null);
+            } else {
+                //Salary Rate
+                lblRateSal.setText(tfHourlyRate.getText());
+
+                double hourlyRate = Double.parseDouble(tfHourlyRate.getText());
+                double RegOTRate = Math.round(hourlyRate * 1.25);
+                double SunOTRate = Math.round(hourlyRate * 1.30);
+
+                //Regular OT Rate
+                lblRateRegOT.setText(Double.toString(RegOTRate));
+                //Sunday OT Rate
+                lblRateSunOT.setText(Double.toString(SunOTRate));
+        }
+            
             try {
                 Date ps = Dformat.parse(Dformat.format(datePayStrt.getDate()));
                 Date pe = Dformat.parse(Dformat.format(datePayEnd.getDate()));
@@ -1391,32 +1478,7 @@ public class Payroll extends javax.swing.JFrame {
                     double salary = hourlyRate * hoursWorked;
                     tfAmtSalary.setText(Double.toString(salary));
                     
-                    tfEmpNo.setEditable(false);
-                    tfLastName.setEditable(false);
-                    tfFirstName.setEditable(false);
-                    tfBasicSal.setEditable(false);
-                    tfHourlyRate.setEditable(false);
-                    datePayStrt.setEnabled(false);
-                    datePayEnd.setEnabled(false);
                     
-                    tfHoursRegOT.setEditable(true);
-                    tfHoursSunOT.setEditable(true);
-                    tfAmtAllowance.setEditable(true);
-                    tfAmtIncentives.setEditable(true); 
-                    tfAmtOthers.setEditable(true); 
-                    cbApplSSS.setEnabled(true);
-                    cbApplPhealth.setEnabled(true);
-                    cbApplPagibig.setEnabled(true);
-                    
-                    tfDaysAbsent.setEditable(true);
-                    tfMinTardy.setEditable(true);
-                    tfMinUT.setEditable(true);
-                    tfAmtCA.setEditable(true);
-                    tfDedOthers.setEditable(true);
-                    cbApplTax.setEnabled(true);
-                    
-                    btnCalcG.setEnabled(true);
-                    btnPrint.setEnabled(true);
                 } else {
                     JOptionPane.showMessageDialog(null, "Invalid input!",
                             "MotorPH Employee Application", JOptionPane.OK_OPTION);
@@ -1451,23 +1513,7 @@ public class Payroll extends javax.swing.JFrame {
     }//GEN-LAST:event_tfBasicSalKeyReleased
 
     private void tfHourlyRateKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfHourlyRateKeyReleased
-       if(tfHourlyRate.getText().equals("")) {
-           lblRateSal.setText(null);
-           lblRateRegOT.setText(null);
-           lblRateSunOT.setText(null);
-       } else {
-        //Salary Rate
-        lblRateSal.setText(tfHourlyRate.getText());
-       
-       double hourlyRate = Double.parseDouble(tfHourlyRate.getText());
-       double RegOTRate = Math.round(hourlyRate*1.25);
-       double SunOTRate = Math.round(hourlyRate*1.30);
-       
-        //Regular OT Rate
-       lblRateRegOT.setText(Double.toString(RegOTRate));
-       //Sunday OT Rate
-       lblRateSunOT.setText(Double.toString(SunOTRate));
-       }
+      
     }//GEN-LAST:event_tfHourlyRateKeyReleased
 
     private void tfHourlyRateKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfHourlyRateKeyTyped
@@ -1827,10 +1873,10 @@ public class Payroll extends javax.swing.JFrame {
 
     private void btnResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResetActionPerformed
                     tfEmpNo.setEditable(true);
-                    tfLastName.setEditable(true);
-                    tfFirstName.setEditable(true);
-                    tfBasicSal.setEditable(true);
-                    tfHourlyRate.setEditable(true);
+                    tfLastName.setText(null);
+                    tfFirstName.setText(null);
+                    tfBasicSal.setText(null);
+                    tfHourlyRate.setText(null);
                     datePayStrt.setEnabled(true);
                     datePayEnd.setEnabled(true);
                     
@@ -1854,15 +1900,15 @@ public class Payroll extends javax.swing.JFrame {
                     tfAmtUT.setEditable(false);
                     
                     tfHoursRegOT.setEditable(false);
-                    tfHoursRegOT.setText(null);
+                    tfHoursRegOT.setText("0");
                     tfHoursSunOT.setEditable(false);
-                    tfHoursSunOT.setText(null);
+                    tfHoursSunOT.setText("0");
                     tfAmtAllowance.setEditable(false);
-                    tfAmtAllowance.setText(null);
+                    tfAmtAllowance.setText("0");
                     tfAmtIncentives.setEditable(false);
-                    tfAmtIncentives.setText(null);
+                    tfAmtIncentives.setText("0");
                     tfAmtOthers.setEditable(false); 
-                    tfAmtOthers.setText(null);
+                    tfAmtOthers.setText("0");
                     cbApplSSS.setEnabled(false);
                     cbApplSSS.setSelected(false);
                     cbApplPhealth.setEnabled(false);
@@ -1871,21 +1917,25 @@ public class Payroll extends javax.swing.JFrame {
                     cbApplPagibig.setSelected(false);
                     
                     tfDaysAbsent.setEditable(false);
-                    tfDaysAbsent.setText(null);
+                    tfDaysAbsent.setText("0");
                     tfMinTardy.setEditable(false);
-                    tfMinTardy.setText(null);
+                    tfMinTardy.setText("0");
                     tfMinUT.setEditable(false);
-                    tfMinUT.setText(null);
+                    tfMinUT.setText("0");
                     tfAmtCA.setEditable(false);
-                    tfAmtCA.setText(null);
+                    tfAmtCA.setText("0");
                     tfDedOthers.setEditable(false);
-                    tfDedOthers.setText(null);
+                    tfDedOthers.setText("0");
                     cbApplTax.setEnabled(false);
                     cbApplTax.setSelected(false);
-                    tfTaxAmt.setText(null);
+                    tfTaxAmt.setText("0");
                     
                     btnCalcG.setEnabled(false);
                     btnPrint.setEnabled(false);
+                    
+                    tfTotalDed.setText("0");
+                    tfGrossIncome.setText("0");
+                    tfNetIncome.setText("0");
     }//GEN-LAST:event_btnResetActionPerformed
 
     private void cbApplTaxKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_cbApplTaxKeyReleased
@@ -1994,6 +2044,100 @@ public class Payroll extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnPrintActionPerformed
 
+    private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
+        
+        SimpleDateFormat Dformat = new SimpleDateFormat ("dd/MM/yyyy");
+    
+        String empno = tfEmpNo.getText();
+        String fname = tfFirstName.getText();
+        String lname = tfLastName.getText();
+        String sal = tfBasicSal.getText();
+        String rate = tfHourlyRate.getText();
+        String date1 = Dformat.format(datePayStrt.getDate());
+        String date2 = Dformat.format(datePayEnd.getDate());
+        String hoursw = tfHoursWorked.getText();
+        String salary = tfAmtSalary.getText();
+        String regoth = tfHoursRegOT.getText();
+        String regota = tfAmtRegOT.getText();
+        String sunoth = tfHoursSunOT.getText();
+        String sunota = tfAmtSunOT.getText();
+        String allo = tfAmtAllowance.getText();
+        String incen = tfAmtIncentives.getText();
+        String others = tfAmtOthers.getText();
+        String gwi = tfGrossIncome.getText();
+        String sss = tfRAmtSSS.getText();
+        String phi = tfRAmtPhealth.getText();
+        String pagi = tfRAmtPagibig.getText();
+        String nabsent = tfDaysAbsent.getText();
+        String absent = tfAmtAbsent.getText();
+        String ntardy = tfMinTardy.getText();
+        String tardy = tfAmtTardy.getText();
+        String nunder = tfMinUT.getText();
+        String under = tfAmtUT.getText();
+        String ca = tfAmtCA.getText();
+        String dothers = tfDedOthers.getText();        
+        String totald = tfTotalDed.getText();
+        String tax = tfTaxAmt.getText();
+        String income = tfNetIncome.getText();
+       
+        String[] record = new String[]{empno,fname,lname,sal,rate,date1,date2,hoursw,salary,regoth,regota,sunoth,sunota,allo,incen,others,gwi,sss,phi,pagi,nabsent,absent,ntardy,tardy,nunder,under,ca,dothers,totald,tax,income};
+        
+        try {
+            CSVWriter writer = new CSVWriter(new FileWriter(filename,true));
+            writer.writeNext(record,false);
+            writer.close();
+            
+            JOptionPane.showMessageDialog(null, "Payroll details has been sucessfully saved!",
+                        "MotorPH Employee Application", JOptionPane.OK_OPTION);
+            
+        } catch (Exception ex) {
+            System.out.println("Error in updating CSV file");
+        }
+      
+    }//GEN-LAST:event_btnSaveActionPerformed
+
+    private void btnEmpSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEmpSearchActionPerformed
+         String empno = tfEmpNo.getText();
+       
+        String line;
+        boolean found = false;
+        try {
+            BufferedReader reader=new BufferedReader(new FileReader(filename1));
+            while ((line=reader.readLine())!=null){
+                String[] ary = line.split(",");
+                String empNo = ary[0];
+                String lname = ary[1];
+                String fname = ary[2];
+                String sal = ary[9];
+                String rate = ary[10];
+                if (empNo.equals(empno)) {
+                    found=true;
+                    tfLastName.setText(lname);
+                    tfFirstName.setText(fname);
+                    tfBasicSal.setText(sal);
+                    tfHourlyRate.setText(rate);
+                } 
+            }
+            
+            if (found == true) {
+                datePayStrt.setEnabled(true);
+                datePayEnd.setEnabled(true);
+            } else {
+                JOptionPane.showMessageDialog(null, "Employee not existed",
+                        "MotorPH Employee Application", JOptionPane.OK_OPTION);
+                datePayStrt.setEnabled(false);
+                datePayEnd.setEnabled(false);
+            }
+            reader.close();
+        } catch (Exception ex) {
+            System.out.println("Error!");
+        }
+    }//GEN-LAST:event_btnEmpSearchActionPerformed
+
+    private void tfHourlyRateInputMethodTextChanged(java.awt.event.InputMethodEvent evt) {//GEN-FIRST:event_tfHourlyRateInputMethodTextChanged
+       
+    }//GEN-LAST:event_tfHourlyRateInputMethodTextChanged
+
     /**
      * @param args the command line arguments
      */
@@ -2029,8 +2173,10 @@ public class Payroll extends javax.swing.JFrame {
     private javax.swing.JButton btnCalcGrossPay;
     private javax.swing.JButton btnCalcHoursWorked;
     private javax.swing.JButton btnClose;
+    private javax.swing.JButton btnEmpSearch;
     private javax.swing.JButton btnPrint;
     private javax.swing.JButton btnReset;
+    private javax.swing.JButton btnSave;
     private javax.swing.JCheckBox cbApplPagibig;
     private javax.swing.JCheckBox cbApplPhealth;
     private javax.swing.JCheckBox cbApplSSS;

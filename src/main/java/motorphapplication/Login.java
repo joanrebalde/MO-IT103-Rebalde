@@ -184,13 +184,14 @@ public class Login extends javax.swing.JFrame {
                 Home home = new Home();
                 home.setLocationRelativeTo(null);
                 home.setVisible(true);
+                this.dispose();
             } else {
                 JOptionPane.showMessageDialog(null, "Access Denied!",
                     "MotorPH Employee Application", JOptionPane.OK_OPTION);
             }
             reader.close();
         } catch (Exception ex) {
-            System.out.println("Error in updating CSV file");
+            System.out.println("Error!");
         }
     }//GEN-LAST:event_jButton3ActionPerformed
 

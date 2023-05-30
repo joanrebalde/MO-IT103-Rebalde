@@ -6,6 +6,3 @@ Employee #,Type of Leave,From,To,Total
 10001,Sick Leave,26/05/2023,27/05/2023,2
 10002,Sick Leave,26/05/2023,27/05/2023,2
 10001,Vacation Leave,01/05/2023,11/05/2023,11
-10002,Sick Leave,01/05/2023,03/05/2023,3
-10002,Emergency Leave,01/05/2023,04/05/2023,4
-10002,Emergency Leave,01/05/2023,01/05/2023,1
